@@ -2,7 +2,7 @@ import React from 'react';
 interface Personality {
   type: string;
   hero: CognitiveFunctionType;
-  // parent: CognitiveFunctionType
+  parent: CognitiveFunctionType;
   // child: CognitiveFunctionType
   // inferior: CognitiveFunctionType
   // nemesis: CognitiveFunctionType
@@ -33,22 +33,22 @@ const Te = CognitiveFunctionType.Te;
 const Fe = CognitiveFunctionType.Fe;
 
 const personalities: Personality[] = [
-  { type: 'ENTJ', hero: Te },
-  { type: 'ESTJ', hero: Te },
-  { type: 'ENFJ', hero: Fe },
-  { type: 'ESFJ', hero: Fe },
-  { type: 'ENFP', hero: Ne },
-  { type: 'ENTP', hero: Ne },
-  { type: 'ESFP', hero: Se },
-  { type: 'ESTP', hero: Se },
-  { type: 'INFJ', hero: Ni },
-  { type: 'INTJ', hero: Ni },
-  { type: 'ISTJ', hero: Si },
-  { type: 'ISFJ', hero: Si },
-  { type: 'INTP', hero: Ti },
-  { type: 'ISTP', hero: Ti },
-  { type: 'INFP', hero: Fi },
-  { type: 'ISFP', hero: Fi },
+  { type: 'ENTJ', hero: Te, parent: Ni },
+  { type: 'ESTJ', hero: Te, parent: Si },
+  { type: 'ENFJ', hero: Fe, parent: Ni },
+  { type: 'ESFJ', hero: Fe, parent: Si },
+  { type: 'ENFP', hero: Ne, parent: Fi },
+  { type: 'ENTP', hero: Ne, parent: Ti },
+  { type: 'ESFP', hero: Se, parent: Fi },
+  { type: 'ESTP', hero: Se, parent: Ti },
+  { type: 'INFJ', hero: Ni, parent: Fe },
+  { type: 'INTJ', hero: Ni, parent: Te },
+  { type: 'ISTJ', hero: Si, parent: Te },
+  { type: 'ISFJ', hero: Si, parent: Fe },
+  { type: 'INTP', hero: Ti, parent: Ne },
+  { type: 'ISTP', hero: Ti, parent: Se },
+  { type: 'INFP', hero: Fi, parent: Ne },
+  { type: 'ISFP', hero: Fi, parent: Se },
 ];
 
 //TODO: expose once needed
