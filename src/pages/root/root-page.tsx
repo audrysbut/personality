@@ -23,9 +23,11 @@ interface Personality {
   type: string;
 }
 
-const extraverts: Personality[] = personalities.filter((p) =>
-  p.type.startsWith('E')
-);
+//TODO: expose once needed
+
+// const extraverts: Personality[] = personalities.filter((p) =>
+//   p.type.startsWith('E')
+// );
 const introverts: Personality[] = personalities.filter((p) =>
   p.type.startsWith('I')
 );
