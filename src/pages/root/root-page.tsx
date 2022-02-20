@@ -1,27 +1,55 @@
 import React from 'react';
-
-const personalities: Personality[] = [
-  { type: 'ENTJ' },
-  { type: 'ESTJ' },
-  { type: 'ENFJ' },
-  { type: 'ESFJ' },
-  { type: 'ENTP' },
-  { type: 'ESTP' },
-  { type: 'ENFP' },
-  { type: 'ESFP' },
-  { type: 'INTJ' },
-  { type: 'ISTJ' },
-  { type: 'INFJ' },
-  { type: 'ISFJ' },
-  { type: 'INTP' },
-  { type: 'ISTP' },
-  { type: 'INFP' },
-  { type: 'ISFP' },
-];
-
 interface Personality {
   type: string;
+  hero: CognitiveFunctionType;
+  // parent: CognitiveFunctionType
+  // child: CognitiveFunctionType
+  // inferior: CognitiveFunctionType
+  // nemesis: CognitiveFunctionType
+  // critic: CognitiveFunctionType
+  // trickster: CognitiveFunctionType
+  // demon: CognitiveFunctionType
 }
+
+enum CognitiveFunctionType {
+  Ni,
+  Ne,
+  Ti,
+  Te,
+  Si,
+  Se,
+  Fi,
+  Fe,
+}
+
+const Ni = CognitiveFunctionType.Ni;
+const Si = CognitiveFunctionType.Si;
+const Ti = CognitiveFunctionType.Ti;
+const Fi = CognitiveFunctionType.Fi;
+
+const Ne = CognitiveFunctionType.Ne;
+const Se = CognitiveFunctionType.Se;
+const Te = CognitiveFunctionType.Te;
+const Fe = CognitiveFunctionType.Fe;
+
+const personalities: Personality[] = [
+  { type: 'ENTJ', hero: Te },
+  { type: 'ESTJ', hero: Te },
+  { type: 'ENFJ', hero: Fe },
+  { type: 'ESFJ', hero: Fe },
+  { type: 'ENFP', hero: Ne },
+  { type: 'ENTP', hero: Ne },
+  { type: 'ESFP', hero: Se },
+  { type: 'ESTP', hero: Se },
+  { type: 'INFJ', hero: Ni },
+  { type: 'INTJ', hero: Ni },
+  { type: 'ISTJ', hero: Si },
+  { type: 'ISFJ', hero: Si },
+  { type: 'INTP', hero: Ti },
+  { type: 'ISTP', hero: Ti },
+  { type: 'INFP', hero: Fi },
+  { type: 'ISFP', hero: Fi },
+];
 
 //TODO: expose once needed
 
@@ -33,11 +61,11 @@ const introverts: Personality[] = personalities.filter((p) =>
 );
 
 const Introverts = (): JSX.Element => {
-  const introvertTable = introverts.map((p) => <td>{p.type}</td>);
+  const types = introverts.map((p) => <td>{p.type}</td>);
   return (
     <>
       <table style={{ width: '100%' }}>
-        <tr>{introvertTable}</tr>
+        <tr>{types}</tr>
       </table>
     </>
   );
