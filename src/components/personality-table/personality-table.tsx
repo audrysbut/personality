@@ -1,4 +1,3 @@
-import { type } from 'os';
 import { CSSProperties } from 'react';
 import { Personality } from '../../dto/personality';
 
