@@ -1,24 +1,32 @@
 import React from 'react';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function One() {
-  return <div>Comp1</div>;
+  return <div>Home</div>;
 }
 
 function Two() {
-  return <div>Comp2</div>;
+  return <div>Path</div>;
 }
 
 function App() {
   return (
     <Router basename="/">
       <div>
-        <div>Pages: </div>
+        <div>
+          <div>Pages:</div>
+          <div>
+            <Link to="/">Home</Link>
+          </div>
+          <div>
+            <Link to="/path">Path</Link>
+          </div>
+        </div>
         <Switch>
           <Route exact path="/">
             <One />
           </Route>
-          <Route path="/two">
+          <Route path="/path">
             <Two />
           </Route>
         </Switch>
