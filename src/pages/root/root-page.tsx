@@ -12,14 +12,14 @@ interface Personality {
 }
 
 enum CognitiveFunctionType {
-  Ni,
-  Ne,
-  Ti,
-  Te,
-  Si,
-  Se,
-  Fi,
-  Fe,
+  Ni = 'Ni',
+  Ne = 'Ne',
+  Ti = 'Ti',
+  Te = 'Te',
+  Si = 'Si',
+  Se = 'Se',
+  Fi = 'Fi',
+  Fe = 'Fe',
 }
 
 const Ni = CognitiveFunctionType.Ni;
@@ -62,10 +62,14 @@ const introverts: Personality[] = personalities.filter((p) =>
 
 const Introverts = (): JSX.Element => {
   const types = introverts.map((p) => <td>{p.type}</td>);
+  const heroes = introverts.map((p) => <td>{p.hero}</td>);
+  const parents = introverts.map((p) => <td>{p.parent}</td>);
   return (
     <>
       <table style={{ width: '100%' }}>
-        <tr>{types}</tr>
+        <tr>{['Type:', ...types]}</tr>
+        <tr>{['Hero:', ...heroes]}</tr>
+        <tr>{['Parent:', ...parents]}</tr>
       </table>
     </>
   );
