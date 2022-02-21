@@ -36,12 +36,14 @@ export const CognitiveFunctionTable = ({
   const types = personalities.map((p) => (
     <td style={{ ...row, ...mainRow }}>{p.type}</td>
   ));
-  const heroes = personalities.map((p) => <td style={row}>{p.hero}</td>);
-  const parents = personalities.map((p) => <td style={row}>{p.parent}</td>);
-  const children = personalities.map((p) => <td style={row}>{p.child}</td>);
-  const nemesis = personalities.map((p) => <td style={row}>{p.nemesis}</td>);
-  const inferiors = personalities.map((p) => <td style={row}>{p.inferior}</td>);
-  const critics = personalities.map((p) => <td style={row}>{p.critic}</td>);
+  const heroes = personalities.map((p) => <Cell title={p.hero} />);
+  const parents = personalities.map((p) => <Cell title={p.parent} />);
+  const children = personalities.map((p) => <Cell title={p.child} />);
+  const nemesis = personalities.map((p) => <Cell title={p.nemesis} />);
+  const inferiors = personalities.map((p) => <Cell title={p.inferior} />);
+  const critics = personalities.map((p) => <Cell title={p.critic} />);
+  const tricksters = personalities.map((p) => <Cell title={p.trickster} />);
+  const demons = personalities.map((p) => <Cell title={p.demon} />);
 
   const type = <TableTitle title="Type:" />;
   const hero = <TableTitle title="Hero:" />;
@@ -50,6 +52,8 @@ export const CognitiveFunctionTable = ({
   const nemesi = <TableTitle title="Nemesis:" />;
   const inferior = <TableTitle title="Inferior:" />;
   const critic = <TableTitle title="Critic:" />;
+  const tricster = <TableTitle title="Trickster:" />;
+  const demon = <TableTitle title="Demon:" />;
 
   return (
     <div
@@ -57,7 +61,11 @@ export const CognitiveFunctionTable = ({
         paddingRight: '10px',
       }}
     >
-      <h4 style={{ textAlign: 'left', paddingLeft: '10px' }}>{title}</h4>
+      <div
+        style={{ textAlign: 'left', paddingLeft: '10px', fontWeight: 'bold' }}
+      >
+        {title}
+      </div>
       <table>
         <tr>{[type, ...types]}</tr>
         <tr>{[hero, ...heroes]}</tr>
@@ -66,7 +74,17 @@ export const CognitiveFunctionTable = ({
         <tr>{[inferior, ...inferiors]}</tr>
         <tr>{[nemesi, ...nemesis]}</tr>
         <tr>{[critic, ...critics]}</tr>
+        <tr>{[tricster, ...tricksters]}</tr>
+        <tr>{[demon, ...demons]}</tr>
       </table>
     </div>
   );
+};
+
+interface CellProperties {
+  title: string;
+}
+
+const Cell = ({ title }: CellProperties) => {
+  return <td style={row}>{title}</td>;
 };

@@ -27,8 +27,8 @@ export interface Personality {
   inferior: CognitiveFunctionType;
   nemesis: CognitiveFunctionType;
   critic: CognitiveFunctionType;
-  // trickster: CognitiveFunctionType
-  // demon: CognitiveFunctionType
+  trickster: CognitiveFunctionType;
+  demon: CognitiveFunctionType;
 }
 
 export const personalities: Personality[] = [
@@ -40,6 +40,8 @@ export const personalities: Personality[] = [
     nemesis: Ti,
     inferior: Fi,
     critic: Ne,
+    trickster: Si,
+    demon: Fe,
   },
   {
     type: 'ESTJ',
@@ -49,6 +51,8 @@ export const personalities: Personality[] = [
     nemesis: Ti,
     inferior: Fi,
     critic: Se,
+    trickster: Ni,
+    demon: Fe,
   },
   {
     type: 'ENFJ',
@@ -58,6 +62,8 @@ export const personalities: Personality[] = [
     nemesis: Fi,
     inferior: Ti,
     critic: Ne,
+    trickster: Si,
+    demon: Te,
   },
   {
     type: 'ESFJ',
@@ -67,6 +73,8 @@ export const personalities: Personality[] = [
     nemesis: Fi,
     inferior: Ti,
     critic: Se,
+    trickster: Ni,
+    demon: Te,
   },
   {
     type: 'ENFP',
@@ -76,6 +84,8 @@ export const personalities: Personality[] = [
     nemesis: Ni,
     inferior: Si,
     critic: Fe,
+    trickster: Ti,
+    demon: Se,
   },
   {
     type: 'ENTP',
@@ -85,6 +95,8 @@ export const personalities: Personality[] = [
     nemesis: Ni,
     inferior: Si,
     critic: Te,
+    trickster: Fi,
+    demon: Se,
   },
   {
     type: 'ESFP',
@@ -94,6 +106,8 @@ export const personalities: Personality[] = [
     nemesis: Si,
     inferior: Ni,
     critic: Fe,
+    trickster: Ti,
+    demon: Ne,
   },
   {
     type: 'ESTP',
@@ -103,6 +117,8 @@ export const personalities: Personality[] = [
     nemesis: Si,
     inferior: Ni,
     critic: Te,
+    trickster: Fi,
+    demon: Ne,
   },
   {
     type: 'INFJ',
@@ -112,6 +128,8 @@ export const personalities: Personality[] = [
     nemesis: Ne,
     inferior: Se,
     critic: Fi,
+    trickster: Te,
+    demon: Si,
   },
   {
     type: 'INTJ',
@@ -121,6 +139,8 @@ export const personalities: Personality[] = [
     nemesis: Ne,
     inferior: Se,
     critic: Ti,
+    trickster: Fe,
+    demon: Si,
   },
   {
     type: 'ISTJ',
@@ -130,6 +150,8 @@ export const personalities: Personality[] = [
     nemesis: Se,
     inferior: Ne,
     critic: Ti,
+    trickster: Fe,
+    demon: Ni,
   },
   {
     type: 'ISFJ',
@@ -139,6 +161,8 @@ export const personalities: Personality[] = [
     nemesis: Se,
     inferior: Ne,
     critic: Fi,
+    trickster: Te,
+    demon: Ni,
   },
   {
     type: 'INTP',
@@ -148,6 +172,8 @@ export const personalities: Personality[] = [
     nemesis: Te,
     inferior: Fe,
     critic: Ni,
+    trickster: Se,
+    demon: Fi,
   },
   {
     type: 'ISTP',
@@ -157,6 +183,8 @@ export const personalities: Personality[] = [
     nemesis: Te,
     inferior: Fe,
     critic: Si,
+    trickster: Ne,
+    demon: Fi,
   },
   {
     type: 'INFP',
@@ -166,6 +194,8 @@ export const personalities: Personality[] = [
     nemesis: Fe,
     inferior: Te,
     critic: Ni,
+    trickster: Se,
+    demon: Ti,
   },
   {
     type: 'ISFP',
@@ -175,5 +205,7 @@ export const personalities: Personality[] = [
     nemesis: Fe,
     inferior: Te,
     critic: Si,
+    trickster: Ne,
+    demon: Ti,
   },
 ];
