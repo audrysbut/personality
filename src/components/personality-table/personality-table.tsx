@@ -43,7 +43,7 @@ export const PersonalityTable = ({
   const type = <TableTitle title="Type:" />;
   const hero = <TableTitle title="Hero:" />;
   const parent = <TableTitle title="Parent:" />;
-  const child = <TableTitle title="Parent:" />;
+  const child = <TableTitle title="Inferior:" />;
 
   return (
     <div
@@ -51,7 +51,7 @@ export const PersonalityTable = ({
         paddingRight: '10px',
       }}
     >
-      <h4 style={{ textAlign: 'center' }}>{title}</h4>
+      <h4 style={{ textAlign: 'left', paddingLeft: '10px' }}>{title}</h4>
       <table>
         <tr>{[type, ...types]}</tr>
         <tr>{[hero, ...heroes]}</tr>

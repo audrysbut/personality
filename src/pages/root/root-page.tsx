@@ -12,12 +12,7 @@ const extraverts: Personality[] = personalities.filter((p) =>
 
 export const RootPage = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-      }}
-    >
+    <div>
       <PersonalityTable personalities={introverts} title="Introverts:" />
       <PersonalityTable personalities={extraverts} title="Extroverts: " />
     </div>
