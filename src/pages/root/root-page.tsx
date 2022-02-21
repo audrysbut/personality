@@ -1,6 +1,6 @@
 import React from 'react';
-import { PersonalityTable } from '../../components/personality-table/personality-table';
-import { personalities, Personality } from '../../dto/personality';
+import { CognitiveFunctionTable } from '../../components/cognitive-function-table/cognitive-function-table';
+import { personalities, Personality } from '../../data/personality';
 
 const introverts: Personality[] = personalities.filter((p) =>
   p.type.startsWith('I')
@@ -13,8 +13,8 @@ const extraverts: Personality[] = personalities.filter((p) =>
 export const RootPage = () => {
   return (
     <div>
-      <PersonalityTable personalities={introverts} title="Introverts:" />
-      <PersonalityTable personalities={extraverts} title="Extroverts: " />
+      <CognitiveFunctionTable personalities={introverts} title="Introverts:" />
+      <CognitiveFunctionTable personalities={extraverts} title="Extroverts: " />
     </div>
   );
 };
