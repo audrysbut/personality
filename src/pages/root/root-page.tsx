@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CognitiveFunctionTable } from '../../components/cognitive-function-table/cognitive-function-table';
 import { personalities, Personality } from '../../data/personality';
 
@@ -11,10 +11,19 @@ const extraverts: Personality[] = personalities.filter((p) =>
 );
 
 export const RootPage = () => {
+  const state = useState('');
   return (
     <div>
-      <CognitiveFunctionTable personalities={introverts} title="Introverts:" />
-      <CognitiveFunctionTable personalities={extraverts} title="Extroverts: " />
+      <CognitiveFunctionTable
+        personalities={introverts}
+        title="Introverts:"
+        state={state}
+      />
+      <CognitiveFunctionTable
+        personalities={extraverts}
+        title="Extroverts:"
+        state={state}
+      />
     </div>
   );
 };
