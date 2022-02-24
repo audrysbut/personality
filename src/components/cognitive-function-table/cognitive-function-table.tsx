@@ -1,10 +1,9 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, useState } from 'react';
 import { Personality } from '../../data/personality';
 
 interface CognitiveFunctionTableProps {
   title: string;
   personalities: Personality[];
-  state: [string, React.Dispatch<React.SetStateAction<string>>];
 }
 
 const row: CSSProperties = {
@@ -41,8 +40,8 @@ const TableTitle = ({ title }: TableTitleProps) => {
 export const CognitiveFunctionTable = ({
   personalities,
   title,
-  state,
 }: CognitiveFunctionTableProps) => {
+  const state = useState('');
   const types = personalities.map((p) => (
     <td style={{ ...row, ...mainRow }}>{p.type}</td>
   ));

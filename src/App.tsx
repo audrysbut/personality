@@ -1,17 +1,20 @@
 import React from 'react';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
-import { RootPage } from './pages/root/root-page';
+import { CognitiveFunctionPage } from './pages/cognitive-functions/cognitive-functions-page';
+import { NavigationBar } from './navigation/navigation';
 
 function App() {
   return (
     <Router basename="/">
-      <div>
-        <Switch>
-          <Route exact path="/">
-            <RootPage />
-          </Route>
-        </Switch>
-      </div>
+      <NavigationBar />
+      <Switch>
+        <Route exact path="/">
+          <CognitiveFunctionPage />
+        </Route>
+        {/* <Route path="/cognitiveFunctions">
+          <CognitiveFunctionPage />
+        </Route> */}
+      </Switch>
     </Router>
   );
 }
