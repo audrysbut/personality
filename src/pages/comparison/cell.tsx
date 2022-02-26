@@ -25,9 +25,13 @@ export const Cell = ({
     setSelectedTypes((prev) => {
       if (contains) {
         return prev.filter((t) => t !== type);
-      } else {
-        return [...prev, type];
       }
+
+      if (prev.length === 2) {
+        return prev;
+      }
+
+      return [...prev, type];
     });
   };
   return (
