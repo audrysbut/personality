@@ -1,14 +1,27 @@
 import React from 'react';
 import { CognitiveFunctionTable } from '../../components/cognitive-function-table/cognitive-function-table';
-import { personalities, Personality } from '../../data/personality';
+import {
+  enfj,
+  enfp,
+  entj,
+  entp,
+  esfj,
+  esfp,
+  estj,
+  estp,
+  infj,
+  infp,
+  intj,
+  intp,
+  isfj,
+  isfp,
+  istj,
+  istp,
+} from '../../data/personality';
 
-const introverts: Personality[] = personalities.filter((p) =>
-  p.type.startsWith('I')
-);
+const introverts = [intj, infj, intp, infp, istj, isfj, istp, isfp];
 
-const extraverts: Personality[] = personalities.filter((p) =>
-  p.type.startsWith('E')
-);
+const extraverts = [entj, enfj, entp, enfp, estj, esfj, estp, esfp];
 
 export const CognitiveFunctionPage = () => {
   return (
