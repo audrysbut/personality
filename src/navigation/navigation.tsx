@@ -1,18 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const NavigationBar = () => {
   return (
     <div>
-      {/* <nav>
+      <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Comparison</Link>
           </li>
           <li>
             <Link to="/cognitiveFunctions">Cognitive functions</Link>
           </li>
         </ul>
-      </nav> */}
+      </nav>
     </div>
   );
 };

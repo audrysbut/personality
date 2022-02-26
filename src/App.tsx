@@ -2,6 +2,7 @@ import React from 'react';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import { CognitiveFunctionPage } from './pages/cognitive-functions/cognitive-functions-page';
 import { NavigationBar } from './navigation/navigation';
+import { ComparisonPage } from './pages/comparison/comparison-page';
 
 function App() {
   return (
@@ -9,11 +10,11 @@ function App() {
       <NavigationBar />
       <Switch>
         <Route exact path="/">
+          <ComparisonPage />
+        </Route>
+        <Route path="/cognitiveFunctions">
           <CognitiveFunctionPage />
         </Route>
-        {/* <Route path="/cognitiveFunctions">
-          <CognitiveFunctionPage />
-        </Route> */}
       </Switch>
     </Router>
   );
