@@ -29,9 +29,9 @@ export const Cell = ({
         return prev.filter((t) => t !== personality);
       }
 
-      if (prev.length === 2) {
-        return prev;
-      }
+      // if (prev.length === 2) {
+      //   return prev;
+      // }
 
       return [...prev, personality];
     });

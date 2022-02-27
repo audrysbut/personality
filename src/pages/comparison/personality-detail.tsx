@@ -1,5 +1,6 @@
 import { Personality } from '../../data/personality';
-import { getPersonalityTypeColor } from './cell';
+import { CognitiveFunctionView } from './cognitive-function-view';
+import { PersonalityDetailTitle } from './personality-detail-title';
 
 interface PersonalityDetailProps {
   personality: Personality;
@@ -16,17 +17,8 @@ export const PersonalityDetail = ({ personality }: PersonalityDetailProps) => {
         textAlign: 'center',
       }}
     >
-      <div
-        style={{
-          background: getPersonalityTypeColor(personality, true, false),
-          height: '1.5rem',
-          alignItems: 'center',
-          lineHeight: '1.5rem',
-        }}
-      >
-        {personality.type}
-      </div>
-      <div>content</div>
+      <PersonalityDetailTitle personality={personality} />
+      <CognitiveFunctionView personality={personality} />
     </div>
   );
 };
