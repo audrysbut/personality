@@ -1,6 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
 import { Personality } from '../../data/personality';
-import { CellIndexIndicator } from './cell-index-indicator';
 
 interface CellProps {
   personality: Personality;
@@ -47,16 +46,9 @@ export const Cell = ({
         height: '3rem',
         border: '2px solid black',
         borderRadius: '6px',
-        position: 'relative',
         userSelect: 'none',
       }}
     >
-      {selected && (
-        <CellIndexIndicator
-          personality={personality}
-          selectedTypes={selectedTypes}
-        />
-      )}
       <div
         style={{
           width: '6rem',
@@ -64,7 +56,6 @@ export const Cell = ({
           textAlign: 'center',
           lineHeight: '3rem',
           fontWeight: isActive ? 'bold' : 'initial',
-          position: 'absolute',
         }}
       >
         {personality.type}
