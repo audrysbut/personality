@@ -1,5 +1,5 @@
 import React, { CSSProperties, useState } from 'react';
-import { Personality } from '../../data/personality';
+import { Personality } from '../../data/cognitive-funcion-data';
 
 interface CognitiveFunctionTableProps {
   title: string;

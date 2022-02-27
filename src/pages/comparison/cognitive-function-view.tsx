@@ -1,5 +1,5 @@
 import { CSSProperties } from 'react';
-import { Personality } from '../../data/personality';
+import { Personality } from '../../data/cognitive-funcion-data';
 
 interface CognitiveFunctionDescriptionProps {
   personality: Personality;

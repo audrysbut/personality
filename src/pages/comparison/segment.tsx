@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import { Personality } from '../../data/personality';
+import { Personality } from '../../data/cognitive-funcion-data';
 import { Cell } from './cell';
 
 interface SegmentProps {

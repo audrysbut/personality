@@ -17,7 +17,7 @@ import {
   istj,
   istp,
   Personality,
-} from '../../data/personality';
+} from '../../data/cognitive-funcion-data';
 import { Segment } from './segment';
 
 const titles: CSSProperties = {

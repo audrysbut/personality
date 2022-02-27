@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Personality } from '../../data/personality';
+import { Personality } from '../../data/cognitive-funcion-data';
 import { PersonalityDetail } from './personality-detail';
 import { PersonalityTypeSelector } from './personality-type-selector';
 

@@ -17,7 +17,7 @@ import {
   isfp,
   istj,
   istp,
-} from '../../data/personality';
+} from '../../data/cognitive-funcion-data';
 
 const introverts = [intj, infj, intp, infp, istj, isfj, istp, isfp];
 

@@ -1,4 +1,4 @@
-enum CognitiveFunctionType {
+export enum CognitiveFunctionType {
   Ni = 'Ni',
   Ne = 'Ne',
   Ti = 'Ti',
@@ -9,15 +9,15 @@ enum CognitiveFunctionType {
   Fe = 'Fe',
 }
 
-const Ni = CognitiveFunctionType.Ni;
-const Si = CognitiveFunctionType.Si;
-const Ti = CognitiveFunctionType.Ti;
-const Fi = CognitiveFunctionType.Fi;
+export const Ni = CognitiveFunctionType.Ni;
+export const Si = CognitiveFunctionType.Si;
+export const Ti = CognitiveFunctionType.Ti;
+export const Fi = CognitiveFunctionType.Fi;
 
-const Ne = CognitiveFunctionType.Ne;
-const Se = CognitiveFunctionType.Se;
-const Te = CognitiveFunctionType.Te;
-const Fe = CognitiveFunctionType.Fe;
+export const Ne = CognitiveFunctionType.Ne;
+export const Se = CognitiveFunctionType.Se;
+export const Te = CognitiveFunctionType.Te;
+export const Fe = CognitiveFunctionType.Fe;
 
 export interface Personality {
   type: string;

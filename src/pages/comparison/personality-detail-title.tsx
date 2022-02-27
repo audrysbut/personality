@@ -1,4 +1,4 @@
-import { Personality } from '../../data/personality';
+import { Personality } from '../../data/cognitive-funcion-data';
 import { getPersonalityTypeColor } from './cell';
 
 interface PersonalityDetailTitleProps {
