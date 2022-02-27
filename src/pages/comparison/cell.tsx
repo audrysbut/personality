@@ -4,8 +4,11 @@ import { CellIndexIndicator } from './cell-index-indicator';
 
 interface CellProps {
   personality: Personality;
-  activeTypeState: [string, Dispatch<SetStateAction<string>>];
-  selectedTypesState: [string[], Dispatch<SetStateAction<string[]>>];
+  activeTypeState: [
+    Personality | undefined,
+    Dispatch<SetStateAction<Personality | undefined>>
+  ];
+  selectedTypesState: [Personality[], Dispatch<SetStateAction<Personality[]>>];
 }
 
 export const Cell = ({
@@ -15,32 +18,31 @@ export const Cell = ({
 }: CellProps) => {
   const [activeType, setActiveType] = activeTypeState;
   const [selectedTypes, setSelectedTypes] = selectedTypesState;
-  const isActive = activeType === personality.type;
-  const selected = selectedTypes.includes(personality.type);
+  const isActive = activeType === personality;
+  const selected = selectedTypes.includes(personality);
 
   const onClick = () => {
-    const type = personality.type;
-    const contains = selectedTypes.includes(type);
+    const contains = selectedTypes.includes(personality);
 
     setSelectedTypes((prev) => {
       if (contains) {
-        return prev.filter((t) => t !== type);
+        return prev.filter((t) => t !== personality);
       }
 
       if (prev.length === 2) {
         return prev;
       }
 
-      return [...prev, type];
+      return [...prev, personality];
     });
   };
   return (
     <div
-      onMouseOver={() => setActiveType(personality.type)}
-      onMouseOut={() => setActiveType('')}
+      onMouseOver={() => setActiveType(personality)}
+      onMouseOut={() => setActiveType(undefined)}
       onClick={onClick}
       style={{
-        background: getColor(personality.type, selected, isActive),
+        background: getPersonalityTypeColor(personality, selected, isActive),
         width: '6rem',
         height: '3rem',
         border: '2px solid black',
@@ -71,7 +73,12 @@ export const Cell = ({
   );
 };
 
-function getColor(type: string, selected: boolean, isActive: boolean): string {
+export function getPersonalityTypeColor(
+  personality: Personality,
+  selected: boolean,
+  isActive: boolean
+): string {
+  const type = personality.type;
   const intuitive = type[1] === 'N';
   const sensor = type[1] === 'S';
   const thinker = type[2] === 'T';

@@ -1,7 +1,7 @@
 import { Personality } from '../../data/personality';
 
 interface CellIndexIndicatorProps {
-  selectedTypes: string[];
+  selectedTypes: Personality[];
   personality: Personality;
 }
 
@@ -20,7 +20,7 @@ export const CellIndexIndicator = ({
         borderRadius: '3px',
       }}
     >
-      {selectedTypes.indexOf(personality.type) + 1}
+      {selectedTypes.indexOf(personality) + 1}
     </div>
   );
 };
