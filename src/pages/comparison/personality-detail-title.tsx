@@ -12,9 +12,8 @@ export const PersonalityDetailTitle = ({
     <div
       style={{
         background: getPersonalityTypeColor(personality, true, false),
-        height: '1.5rem',
-        alignItems: 'center',
         lineHeight: '1.5rem',
+        fontWeight: 'bold',
       }}
     >
       {personality.type}

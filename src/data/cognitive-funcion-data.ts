@@ -19,8 +19,26 @@ export const Se = CognitiveFunctionType.Se;
 export const Te = CognitiveFunctionType.Te;
 export const Fe = CognitiveFunctionType.Fe;
 
+export type PersonalityType =
+  | 'INFJ'
+  | 'INTJ'
+  | 'ENTJ'
+  | 'ESTJ'
+  | 'ENFJ'
+  | 'ESFJ'
+  | 'ENFP'
+  | 'ENTP'
+  | 'ESFP'
+  | 'ESTP'
+  | 'ISTJ'
+  | 'ISFJ'
+  | 'INTP'
+  | 'ISTP'
+  | 'INFP'
+  | 'ISFP';
+
 export interface Personality {
-  type: string;
+  type: PersonalityType;
   hero: CognitiveFunctionType;
   parent: CognitiveFunctionType;
   child: CognitiveFunctionType;
