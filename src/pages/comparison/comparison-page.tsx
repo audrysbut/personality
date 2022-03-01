@@ -10,7 +10,10 @@ export const ComparisonPage = () => {
   const detailComponents = selectedTypes.map((t) => {
     return (
       <td>
-        <PersonalityDetail personality={t} />
+        <PersonalityDetail
+          personality={t}
+          selectedTypesState={selectedTypesState}
+        />
       </td>
     );
   });

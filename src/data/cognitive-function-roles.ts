@@ -38,18 +38,11 @@ interface CognitiveFunctionData {
 const data: CognitiveFunctionData[] = [
   {
     cognitiveFunctionType: Si,
-    traits: [
-      'Long term memory',
-      'Conviction',
-      'Discipline',
-      'Past',
-      'Honor',
-      'Duty',
-    ],
+    traits: ['Long term memory', 'Conviction', 'Discipline', 'Honor', 'Duty'],
   },
   {
     cognitiveFunctionType: Se,
-    traits: ['Physics', 'Mechanics', 'Short term memory'],
+    traits: ['Physics', 'Mechanics', 'Short term memory', 'What others do'],
   },
   {
     cognitiveFunctionType: Fi,
@@ -57,15 +50,15 @@ const data: CognitiveFunctionData[] = [
   },
   {
     cognitiveFunctionType: Fe,
-    traits: ['Ethics', 'Feelings of others'],
+    traits: ['Ethics', 'Empathy', 'Guilt'],
   },
   {
     cognitiveFunctionType: Ti,
-    traits: ['Logic'],
+    traits: ['Logic', 'True / False'],
   },
   {
     cognitiveFunctionType: Te,
-    traits: ['Rationale'],
+    traits: ['Rationale', 'Belief', 'Standarts'],
   },
   {
     cognitiveFunctionType: Ne,
@@ -73,7 +66,7 @@ const data: CognitiveFunctionData[] = [
   },
   {
     cognitiveFunctionType: Ni,
-    traits: ['Willpower', 'Future oriented'],
+    traits: ['Willpower', 'Future'],
   },
 ];
 

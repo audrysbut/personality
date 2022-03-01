@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from 'react';
 import {
   CognitiveFunctionType,
   Personality,
@@ -11,9 +12,13 @@ import { PersonalityDetailTitle } from './personality-detail-title';
 
 interface PersonalityDetailProps {
   personality: Personality;
+  selectedTypesState: [Personality[], Dispatch<SetStateAction<Personality[]>>];
 }
 
-export const PersonalityDetail = ({ personality }: PersonalityDetailProps) => {
+export const PersonalityDetail = ({
+  personality,
+  selectedTypesState,
+}: PersonalityDetailProps) => {
   return (
     <div
       style={{
@@ -26,7 +31,10 @@ export const PersonalityDetail = ({ personality }: PersonalityDetailProps) => {
         overflow: 'hidden',
       }}
     >
-      <PersonalityDetailTitle personality={personality} />
+      <PersonalityDetailTitle
+        personality={personality}
+        selectedTypesState={selectedTypesState}
+      />
       <CognitiveFunctionView personality={personality} />
       <CognitiveFunctionDescriptions personality={personality} />
     </div>
