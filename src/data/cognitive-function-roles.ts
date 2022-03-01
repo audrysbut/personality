@@ -73,7 +73,7 @@ const data: CognitiveFunctionData[] = [
   },
   {
     cognitiveFunctionType: Ni,
-    traits: ['Willpower', 'Own Future'],
+    traits: ['Willpower', 'Future oriented'],
   },
 ];
 

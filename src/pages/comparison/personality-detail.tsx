@@ -98,15 +98,7 @@ const SingleCognitiveFunction = ({
       </div>
     );
   }
-  const traitsView = data.traits.map((t) => (
-    <div
-      style={{
-        textAlign: 'left',
-      }}
-    >
-      {`* ${t}`}
-    </div>
-  ));
+  const traitsView = data.traits.map((t) => <div>{`* ${t}`}</div>);
   return (
     <>
       <div
@@ -125,7 +117,14 @@ const SingleCognitiveFunction = ({
           {` (${position})`}
         </span>
       </div>
-      <div>{traitsView}</div>
+      <div
+        style={{
+          textAlign: 'left',
+          paddingLeft: '0.2rem',
+        }}
+      >
+        {traitsView}
+      </div>
     </>
   );
 };
