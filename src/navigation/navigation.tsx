@@ -7,7 +7,10 @@ export const NavigationBar = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/">Comparison</Link>
+            <Link to="/">Inspect</Link>
+          </li>
+          <li>
+            <Link to="/comparison">Comparison</Link>
           </li>
           <li>
             <Link to="/cognitiveFunctions">Cognitive functions</Link>
