@@ -16,10 +16,11 @@ export const PersonalityRow = ({
   const isActive = states.isActive(personality);
   const activeColor = getPersonalityTypeColor(personality, isActive);
   const [active, setActive] = useState(false);
+  const borderWeight = active || isActive ? 2 : 1;
   return (
     <td
       style={{
-        border: '1px solid black',
+        border: `${borderWeight}px solid black`,
         textAlign: 'center',
         background: activeColor,
         userSelect: 'none',
