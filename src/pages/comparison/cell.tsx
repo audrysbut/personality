@@ -1,47 +1,25 @@
-import { Dispatch, SetStateAction } from 'react';
+import { useState } from 'react';
 import { Personality } from '../../data/cognitive-funcion-data';
+import { ActivePersonalityTypeSelector } from '../inspect/active-personality-type-selector';
 
 interface CellProps {
   personality: Personality;
-  activeTypeState: [
-    Personality | undefined,
-    Dispatch<SetStateAction<Personality | undefined>>
-  ];
-  selectedTypesState: [Personality[], Dispatch<SetStateAction<Personality[]>>];
+  states: ActivePersonalityTypeSelector;
 }
 
-export const Cell = ({
-  personality,
-  activeTypeState,
-  selectedTypesState,
-}: CellProps) => {
-  const [activeType, setActiveType] = activeTypeState;
-  const [selectedTypes, setSelectedTypes] = selectedTypesState;
-  const isActive = activeType === personality;
-  const selected = selectedTypes.includes(personality);
+export const Cell = ({ personality, states }: CellProps) => {
+  const [cursorOver, setCursorOver] = useState(false);
+  const { isActive, toggle } = states;
+  const active = isActive(personality);
+  const onClick = () => toggle(personality);
 
-  const onClick = () => {
-    const contains = selectedTypes.includes(personality);
-
-    setSelectedTypes((prev) => {
-      if (contains) {
-        return prev.filter((t) => t !== personality);
-      }
-
-      // if (prev.length === 2) {
-      //   return prev;
-      // }
-
-      return [...prev, personality];
-    });
-  };
   return (
     <div
-      onMouseOver={() => setActiveType(personality)}
-      onMouseOut={() => setActiveType(undefined)}
+      onMouseOver={() => setCursorOver(true)}
+      onMouseOut={() => setCursorOver(false)}
       onClick={onClick}
       style={{
-        background: getPersonalityTypeColor(personality, selected, isActive),
+        background: getPersonalityTypeColor(personality, active),
         width: '6rem',
         height: '3rem',
         border: '2px solid black',
@@ -55,7 +33,7 @@ export const Cell = ({
           height: '3rem',
           textAlign: 'center',
           lineHeight: '3rem',
-          fontWeight: isActive ? 'bold' : 'initial',
+          fontWeight: cursorOver ? 'bold' : 'initial',
         }}
       >
         {personality.type}
@@ -66,8 +44,7 @@ export const Cell = ({
 
 export function getPersonalityTypeColor(
   personality: Personality,
-  selected: boolean,
-  isActive: boolean
+  selected: boolean
 ): string {
   const type = personality.type;
   const intuitive = type[1] === 'N';
@@ -94,10 +71,6 @@ export function getPersonalityTypeColor(
 
   if (perceiver && selected) {
     return 'yellow';
-  }
-
-  if (isActive) {
-    return 'lightgray';
   }
 
   return 'white';

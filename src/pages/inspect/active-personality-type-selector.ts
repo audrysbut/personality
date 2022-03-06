@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Personality } from '../../data/cognitive-funcion-data';
 
 export interface ActivePersonalityTypeSelector {
-  //   activePersonalities: Personality[];
+  activePersonalities: Personality[];
 
   activate(personality: Personality): void;
   deactivatePersonality(personality: Personality): void;
@@ -15,6 +15,8 @@ export const useActivePersonalityTypes = (): ActivePersonalityTypeSelector => {
     []
   );
   return {
+    activePersonalities,
+
     activate(personality: Personality) {
       if (!activePersonalities.includes(personality)) {
         setActivePersonalities([...activePersonalities, personality]);

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Personality } from '../../data/cognitive-funcion-data';
 import { getPersonalityTypeColor } from '../comparison/cell';
 import { ActivePersonalityTypeSelector } from './active-personality-type-selector';
@@ -13,7 +14,8 @@ export const PersonalityRow = ({
 }: PersonalityRowProps) => {
   const { toggle } = states;
   const isActive = states.isActive(personality);
-  const activeColor = getPersonalityTypeColor(personality, isActive, false);
+  const activeColor = getPersonalityTypeColor(personality, isActive);
+  const [active, setActive] = useState(false);
   return (
     <td
       style={{
@@ -21,8 +23,11 @@ export const PersonalityRow = ({
         textAlign: 'center',
         background: activeColor,
         userSelect: 'none',
+        fontWeight: active ? 'bold' : 'normal',
       }}
       onClick={() => toggle(personality)}
+      onMouseOver={() => setActive(true)}
+      onMouseOut={() => setActive(false)}
     >
       {personality.type}
     </td>

@@ -1,53 +1,29 @@
-import { Dispatch, SetStateAction } from 'react';
 import { Personality } from '../../data/cognitive-funcion-data';
+import { ActivePersonalityTypeSelector } from '../inspect/active-personality-type-selector';
 import { Cell } from './cell';
 
 interface SegmentProps {
   types: Personality[];
-  activeTypeState: [
-    Personality | undefined,
-    Dispatch<SetStateAction<Personality | undefined>>
-  ];
-  selectedTypesState: [Personality[], Dispatch<SetStateAction<Personality[]>>];
+  states: ActivePersonalityTypeSelector;
 }
-export const Segment = ({
-  types,
-  activeTypeState,
-  selectedTypesState,
-}: SegmentProps) => {
+export const Segment = ({ types, states }: SegmentProps) => {
   const [type1, type2, type3, type4] = types;
   return (
     <table>
       <tr>
         <td>
-          <Cell
-            personality={type1}
-            activeTypeState={activeTypeState}
-            selectedTypesState={selectedTypesState}
-          />
+          <Cell personality={type1} states={states} />
         </td>
         <td>
-          <Cell
-            personality={type2}
-            activeTypeState={activeTypeState}
-            selectedTypesState={selectedTypesState}
-          />
+          <Cell personality={type2} states={states} />
         </td>
       </tr>
       <tr>
         <td>
-          <Cell
-            personality={type3}
-            activeTypeState={activeTypeState}
-            selectedTypesState={selectedTypesState}
-          />
+          <Cell personality={type3} states={states} />
         </td>
         <td>
-          <Cell
-            personality={type4}
-            activeTypeState={activeTypeState}
-            selectedTypesState={selectedTypesState}
-          />
+          <Cell personality={type4} states={states} />
         </td>
       </tr>
     </table>

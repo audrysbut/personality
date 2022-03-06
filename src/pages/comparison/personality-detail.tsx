@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from 'react';
 import {
   CognitiveFunctionType,
   Personality,
@@ -7,22 +6,23 @@ import {
   CogntiveFunctionPosition,
   getCognitiveFunctionData,
 } from '../../data/cognitive-function-roles';
+import { ActivePersonalityTypeSelector } from '../inspect/active-personality-type-selector';
 import { CognitiveFunctionView } from './cognitive-function-view';
 import { PersonalityDetailTitle } from './personality-detail-title';
 
 interface PersonalityDetailProps {
   personality: Personality;
-  selectedTypesState: [Personality[], Dispatch<SetStateAction<Personality[]>>];
+  states: ActivePersonalityTypeSelector;
 }
 
 export const PersonalityDetail = ({
   personality,
-  selectedTypesState,
+  states,
 }: PersonalityDetailProps) => {
   return (
     <div
       style={{
-        width: '15rem',
+        minWidth: '15rem',
         border: '2px solid black',
         marginRight: '1rem',
         paddingBottom: '0.5em',
@@ -31,10 +31,7 @@ export const PersonalityDetail = ({
         overflow: 'hidden',
       }}
     >
-      <PersonalityDetailTitle
-        personality={personality}
-        selectedTypesState={selectedTypesState}
-      />
+      <PersonalityDetailTitle personality={personality} states={states} />
       <CognitiveFunctionView personality={personality} />
       <CognitiveFunctionDescriptions personality={personality} />
     </div>

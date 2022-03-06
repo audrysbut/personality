@@ -1,4 +1,4 @@
-import { CSSProperties, Dispatch, SetStateAction, useState } from 'react';
+import { CSSProperties } from 'react';
 import {
   enfj,
   enfp,
@@ -16,8 +16,8 @@ import {
   isfp,
   istj,
   istp,
-  Personality,
 } from '../../data/cognitive-funcion-data';
+import { ActivePersonalityTypeSelector } from '../inspect/active-personality-type-selector';
 import { Segment } from './segment';
 
 const titles: CSSProperties = {
@@ -25,18 +25,16 @@ const titles: CSSProperties = {
 };
 
 interface PersonalityTypeSelectorProps {
-  selectedTypesState: [Personality[], Dispatch<SetStateAction<Personality[]>>];
+  states: ActivePersonalityTypeSelector;
 }
 
 export const PersonalityTypeSelector = ({
-  selectedTypesState,
+  states,
 }: PersonalityTypeSelectorProps) => {
   const inTypes = [intj, infj, intp, infp];
   const isTypes = [istj, isfj, istp, isfp];
   const enTypes = [entj, enfj, entp, enfp];
   const esTypes = [estj, esfj, estp, esfp];
-
-  const activeTypeState = useState<Personality | undefined>();
 
   return (
     <table>
@@ -52,35 +50,19 @@ export const PersonalityTypeSelector = ({
       <tr>
         <td>Introverted</td>
         <td>
-          <Segment
-            types={inTypes}
-            activeTypeState={activeTypeState}
-            selectedTypesState={selectedTypesState}
-          />
+          <Segment types={inTypes} states={states} />
         </td>
         <td>
-          <Segment
-            types={isTypes}
-            activeTypeState={activeTypeState}
-            selectedTypesState={selectedTypesState}
-          />
+          <Segment types={isTypes} states={states} />
         </td>
       </tr>
       <tr>
         <td>Extroverted</td>
         <td>
-          <Segment
-            types={enTypes}
-            activeTypeState={activeTypeState}
-            selectedTypesState={selectedTypesState}
-          />
+          <Segment types={enTypes} states={states} />
         </td>
         <td>
-          <Segment
-            types={esTypes}
-            activeTypeState={activeTypeState}
-            selectedTypesState={selectedTypesState}
-          />
+          <Segment types={esTypes} states={states} />
         </td>
       </tr>
     </table>

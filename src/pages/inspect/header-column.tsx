@@ -7,6 +7,7 @@ export const HeaderColumn = ({ title }: HeaderColumnProps) => {
     <th
       style={{
         border: '2px solid black',
+        width: '7rem',
       }}
     >
       {title}

@@ -1,26 +1,24 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import { Personality } from '../../data/cognitive-funcion-data';
+import { ActivePersonalityTypeSelector } from '../inspect/active-personality-type-selector';
 import { getPersonalityTypeColor } from './cell';
 
 interface PersonalityDetailTitleProps {
   personality: Personality;
-  selectedTypesState: [Personality[], Dispatch<SetStateAction<Personality[]>>];
+  states: ActivePersonalityTypeSelector;
 }
 
 export const PersonalityDetailTitle = ({
   personality,
-  selectedTypesState,
+  states,
 }: PersonalityDetailTitleProps) => {
   const [active, setActive] = useState(false);
-  const [, setActivePersonalities] = selectedTypesState;
-  const onClick = () =>
-    setActivePersonalities((prev) => prev.filter((p) => p !== personality));
-
   const opacity = active ? 0.3 : 0.2;
+  const { deactivatePersonality } = states;
   return (
     <div
       style={{
-        background: getPersonalityTypeColor(personality, true, false),
+        background: getPersonalityTypeColor(personality, true),
         lineHeight: '1.5rem',
         fontWeight: 'bold',
         position: 'relative',
@@ -38,7 +36,7 @@ export const PersonalityDetailTitle = ({
         }}
         onMouseOver={() => setActive(true)}
         onMouseLeave={() => setActive(false)}
-        onClick={onClick}
+        onClick={() => deactivatePersonality(personality)}
       >
         x
       </span>

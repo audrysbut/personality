@@ -1,7 +1,6 @@
 import { CSSProperties } from 'react';
 
 interface RowColumnProps {
-  title: string;
   direct?: boolean;
   informative?: boolean;
   initiative?: boolean;
@@ -10,7 +9,6 @@ interface RowColumnProps {
   moving?: boolean;
 }
 export const RowColumn = ({
-  title,
   direct,
   informative,
   initiative,
@@ -48,23 +46,17 @@ export const RowColumn = ({
     <td
       style={{
         border: '1px solid black',
-        fontSize: '1.2rem',
+        textAlign: 'center',
       }}
     >
-      {title}
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-        }}
-      >
+      <>
         {directRow}
         {informativeRow}
         {initiativeRow}
         {respondingRow}
         {controlRow}
         {movingRow}
-      </div>
+      </>
     </td>
   );
 };
