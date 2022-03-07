@@ -23,6 +23,7 @@ export const RowColumn = ({
     borderRadius: '0.3rem',
     fontSize: '1rem',
     marginBottom: '0.2rem',
+    userSelect: 'none',
   };
   const directRow = direct ? (
     <div style={{ ...style, background: 'violet' }}>Direct</div>

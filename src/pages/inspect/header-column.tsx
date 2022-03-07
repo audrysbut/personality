@@ -8,6 +8,7 @@ export const HeaderColumn = ({ title }: HeaderColumnProps) => {
       style={{
         border: '2px solid black',
         width: '7rem',
+        userSelect: 'none',
       }}
     >
       {title}
