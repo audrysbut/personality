@@ -4,12 +4,8 @@ import {
   Personality,
 } from '../../data/cognitive-funcion-data';
 import {
-  child,
   CogntiveFunctionPosition,
   getCognitiveFunctionData,
-  hero,
-  inferior,
-  parent,
 } from '../../data/cognitive-function-roles';
 import { ActivePersonalityTypeSelector } from '../inspect/active-personality-type-selector';
 import { PersonalityDetailTitle } from './personality-detail-title';
