@@ -1,6 +1,7 @@
 import { CSSProperties } from 'react';
 import { Personality } from '../../data/cognitive-funcion-data';
 
+//TODO: remove this
 interface CognitiveFunctionDescriptionProps {
   personality: Personality;
 }

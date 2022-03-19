@@ -58,7 +58,7 @@ const data: CognitiveFunctionData[] = [
   },
   {
     cognitiveFunctionType: Te,
-    traits: ['Rationale', 'Belief', 'Standarts'],
+    traits: ['Rationale', 'Statistics', 'Standarts'],
   },
   {
     cognitiveFunctionType: Ne,

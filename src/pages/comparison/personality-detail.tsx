@@ -4,11 +4,14 @@ import {
   Personality,
 } from '../../data/cognitive-funcion-data';
 import {
+  child,
   CogntiveFunctionPosition,
   getCognitiveFunctionData,
+  hero,
+  inferior,
+  parent,
 } from '../../data/cognitive-function-roles';
 import { ActivePersonalityTypeSelector } from '../inspect/active-personality-type-selector';
-import { CognitiveFunctionView } from './cognitive-function-view';
 import { PersonalityDetailTitle } from './personality-detail-title';
 
 interface PersonalityDetailProps {
@@ -33,7 +36,7 @@ export const PersonalityDetail = ({
       }}
     >
       <PersonalityDetailTitle personality={personality} states={states} />
-      <CognitiveFunctionView personality={personality} />
+      {/* <CognitiveFunctionView personality={personality} /> */}
       <CognitiveFunctionDescriptions personality={personality} />
     </div>
   );
@@ -105,6 +108,34 @@ const SingleCognitiveFunction = ({
     );
   }
   const traitsView = data.traits.map((t) => <div>{`* ${t}`}</div>);
+  const visibleText = () => {
+    return (
+      <>
+        <span
+          style={{
+            marginLeft: '0.3rem',
+          }}
+        >
+          {cognitiveFunction}
+        </span>
+        <span
+          style={{
+            fontWeight: 'initial',
+          }}
+        >
+          {` (${position})`}
+        </span>
+      </>
+    );
+  };
+
+  const isMainStackPosition = [hero, parent, child, inferior].includes(
+    position
+  );
+
+  // const mainStackColor = 'rgba(200,255,200,1)';
+  // const shadowStackColor = 'rgba(255,200,200,1)';
+  // const color = isMainStackPosition ? mainStackColor : shadowStackColor;
   return (
     <>
       <div
@@ -112,6 +143,7 @@ const SingleCognitiveFunction = ({
           borderBottom: '1px solid black',
           borderTop: '1px solid black',
           fontWeight: 'bold',
+          // background: color,
         }}
       >
         <div
@@ -124,21 +156,11 @@ const SingleCognitiveFunction = ({
             userSelect: 'none',
           }}
         >
-          <CongnitiveFunctionIcon cognitiveFunction={cognitiveFunction} />
-          <span
-            style={{
-              marginLeft: '0.3rem',
-            }}
-          >
-            {cognitiveFunction}
-          </span>
-          <span
-            style={{
-              fontWeight: 'initial',
-            }}
-          >
-            {` (${position})`}
-          </span>
+          <CongnitiveFunctionIcon
+            cognitiveFunction={cognitiveFunction}
+            position={position}
+          />
+          {visibleText()}
         </div>
       </div>
       <div
