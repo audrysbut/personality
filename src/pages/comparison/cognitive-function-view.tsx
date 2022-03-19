@@ -1,9 +1,5 @@
 import { CSSProperties } from 'react';
-import { CongnitiveFunctionIcon } from '../../components/cognitive-function-icon/cognitive-function-icon';
-import {
-  CognitiveFunctionType,
-  Personality,
-} from '../../data/cognitive-funcion-data';
+import { Personality } from '../../data/cognitive-funcion-data';
 
 interface CognitiveFunctionDescriptionProps {
   personality: Personality;
