@@ -121,10 +121,17 @@ const SingleCognitiveFunction = ({
             alignItems: 'center',
             margin: '0 auto',
             width: '50%',
+            userSelect: 'none',
           }}
         >
           <CongnitiveFunctionIcon cognitiveFunction={cognitiveFunction} />
-          {cognitiveFunction}
+          <span
+            style={{
+              marginLeft: '0.3rem',
+            }}
+          >
+            {cognitiveFunction}
+          </span>
           <span
             style={{
               fontWeight: 'initial',
