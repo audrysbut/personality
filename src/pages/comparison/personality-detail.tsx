@@ -129,13 +129,6 @@ const SingleCognitiveFunction = ({
     );
   };
 
-  const isMainStackPosition = [hero, parent, child, inferior].includes(
-    position
-  );
-
-  // const mainStackColor = 'rgba(200,255,200,1)';
-  // const shadowStackColor = 'rgba(255,200,200,1)';
-  // const color = isMainStackPosition ? mainStackColor : shadowStackColor;
   return (
     <>
       <div
