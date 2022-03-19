@@ -1,3 +1,4 @@
+import { CongnitiveFunctionIcon } from '../../components/cognitive-function-icon/cognitive-function-icon';
 import {
   CognitiveFunctionType,
   Personality,
@@ -108,19 +109,30 @@ const SingleCognitiveFunction = ({
     <>
       <div
         style={{
-          fontWeight: 'bold',
           borderBottom: '1px solid black',
           borderTop: '1px solid black',
+          fontWeight: 'bold',
         }}
       >
-        {cognitiveFunction}
-        <span
+        <div
           style={{
-            fontWeight: 'initial',
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            margin: '0 auto',
+            width: '50%',
           }}
         >
-          {` (${position})`}
-        </span>
+          <CongnitiveFunctionIcon cognitiveFunction={cognitiveFunction} />
+          {cognitiveFunction}
+          <span
+            style={{
+              fontWeight: 'initial',
+            }}
+          >
+            {` (${position})`}
+          </span>
+        </div>
       </div>
       <div
         style={{
