@@ -54,9 +54,9 @@ export const InspectTable = ({ states }: InspectViewProps) => {
       <tr>
         <HeaderColumn title="Comunication style" />
         <HeaderColumn title="Guardians" />
-        <HeaderColumn title="Artisans" />
+        <HeaderColumn title="Explorers" />
         <HeaderColumn title="Analytics" />
-        <HeaderColumn title="Idealists" />
+        <HeaderColumn title="Diplomats" />
       </tr>
       <tr>{[inChargeRow, ...inChargeRows]}</tr>
       <tr>{[startersRow, ...starters]}</tr>
