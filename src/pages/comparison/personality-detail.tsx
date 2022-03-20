@@ -32,7 +32,6 @@ export const PersonalityDetail = ({
       }}
     >
       <PersonalityDetailTitle personality={personality} states={states} />
-      {/* <CognitiveFunctionView personality={personality} /> */}
       <CognitiveFunctionDescriptions personality={personality} />
     </div>
   );
@@ -117,9 +116,10 @@ const SingleCognitiveFunction = ({
         <span
           style={{
             fontWeight: 'initial',
+            marginLeft: '0.2rem',
           }}
         >
-          {` (${position})`}
+          {`(${position})`}
         </span>
       </>
     );
@@ -132,7 +132,6 @@ const SingleCognitiveFunction = ({
           borderBottom: '1px solid black',
           borderTop: '1px solid black',
           fontWeight: 'bold',
-          // background: color,
         }}
       >
         <div
