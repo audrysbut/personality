@@ -109,17 +109,26 @@ const SingleCognitiveFunction = ({
         <span
           style={{
             marginLeft: '0.3rem',
+            fontWeight: 'bold',
           }}
         >
-          {cognitiveFunction}
+          {data.value}
         </span>
         <span
           style={{
-            fontWeight: 'initial',
             marginLeft: '0.2rem',
+            fontWeight: 'normal',
           }}
         >
-          {`(${position})`}
+          {`(${cognitiveFunction})`}
+        </span>
+        <span
+          style={{
+            fontWeight: 'normal',
+            marginLeft: '0.1rem',
+          }}
+        >
+          {`[${position}]`}
         </span>
       </>
     );
@@ -140,7 +149,7 @@ const SingleCognitiveFunction = ({
             flexDirection: 'row',
             alignItems: 'center',
             margin: '0 auto',
-            width: '50%',
+            width: '90%',
             userSelect: 'none',
           }}
         >

@@ -33,40 +33,49 @@ export const demon = CogntiveFunctionPosition.demon;
 interface CognitiveFunctionData {
   cognitiveFunctionType: CognitiveFunctionType;
   traits: string[];
+  value: string;
 }
 
 const data: CognitiveFunctionData[] = [
   {
     cognitiveFunctionType: Si,
     traits: ['Long term memory', 'Conviction', 'Discipline', 'Honor', 'Duty'],
+    value: 'Stabilizing',
   },
   {
     cognitiveFunctionType: Se,
     traits: ['Physics', 'Mechanics', 'Short term memory', 'What others do'],
+    value: 'Experiencing',
   },
   {
     cognitiveFunctionType: Fi,
     traits: ['Morals', 'Principles'],
+    value: 'Valuing',
   },
   {
     cognitiveFunctionType: Fe,
     traits: ['Ethics', 'Empathy', 'Guilt'],
+    value: 'Connecting',
   },
   {
     cognitiveFunctionType: Ti,
     traits: ['Logic', 'True / False'],
+    value: 'Reasoning',
   },
   {
     cognitiveFunctionType: Te,
     traits: ['Rationale', 'Statistics', 'Standarts'],
+    value: 'Structuring',
   },
   {
     cognitiveFunctionType: Ne,
     traits: ['Metaphysics', 'Prescience', 'All futures'],
+    value: 'Ideating',
   },
   {
     cognitiveFunctionType: Ni,
     traits: ['Willpower', 'Future'],
+    value: 'Knowing',
   },
 ];
 
