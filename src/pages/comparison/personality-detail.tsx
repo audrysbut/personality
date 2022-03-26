@@ -4,8 +4,12 @@ import {
   Personality,
 } from '../../data/cognitive-funcion-data';
 import {
+  child,
   CogntiveFunctionPosition,
   getCognitiveFunctionData,
+  hero,
+  inferior,
+  parent,
 } from '../../data/cognitive-function-roles';
 import { ActivePersonalityTypeSelector } from '../inspect/active-personality-type-selector';
 import { PersonalityDetailTitle } from './personality-detail-title';
@@ -86,6 +90,11 @@ interface SingleCognitiveFunctionProps {
   cognitiveFunction: CognitiveFunctionType;
 }
 
+const mainStackColor =
+  'linear-gradient(to right, white, rgba(0,255,0,0.3), white)';
+const shadowStackColor =
+  'linear-gradient(to right, white, rgba(0,0,0,0.3), white)';
+
 const SingleCognitiveFunction = ({
   cognitiveFunction,
   position,
@@ -134,6 +143,8 @@ const SingleCognitiveFunction = ({
     );
   };
 
+  const isMainStack = [hero, parent, child, inferior].includes(position);
+  const color = isMainStack ? mainStackColor : shadowStackColor;
   return (
     <>
       <div
@@ -141,6 +152,7 @@ const SingleCognitiveFunction = ({
           borderBottom: '1px solid black',
           borderTop: '1px solid black',
           fontWeight: 'bold',
+          background: color,
         }}
       >
         <div
