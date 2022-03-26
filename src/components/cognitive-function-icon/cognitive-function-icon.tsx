@@ -14,9 +14,9 @@ import LanOutlinedIcon from '@mui/icons-material/LanOutlined';
 import SkateboardingOutlinedIcon from '@mui/icons-material/SkateboardingOutlined';
 import TipsAndUpdatesOutlinedIcon from '@mui/icons-material/TipsAndUpdatesOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-import ConnectWithoutContactOutlinedIcon from '@mui/icons-material/ConnectWithoutContactOutlined';
 import BalanceOutlinedIcon from '@mui/icons-material/BalanceOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+import GroupsIcon from '@mui/icons-material/Groups';
 import { CogntiveFunctionPosition } from '../../data/cognitive-function-roles';
 
 interface CognitiveFunctionIconProps {
@@ -43,7 +43,7 @@ export const CongnitiveFunctionIcon = ({
       case Ti:
         return <SettingsOutlinedIcon />;
       case Fe:
-        return <ConnectWithoutContactOutlinedIcon />;
+        return <GroupsIcon />;
       case Si:
         return <BalanceOutlinedIcon />;
       default:
@@ -71,7 +71,7 @@ export const CongnitiveFunctionIcon = ({
       case Ni:
         return 'magenta';
       case Fe:
-        return 'tomato';
+        return 'purple';
       case Si:
         return 'lime';
       case Se:
