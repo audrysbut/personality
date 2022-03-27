@@ -22,9 +22,11 @@ export const PersonalityDetailTitle = ({
         lineHeight: '1.5rem',
         fontWeight: 'bold',
         position: 'relative',
+        userSelect: 'none',
       }}
     >
       {personality.type}
+
       <span
         style={{
           right: '0rem',
