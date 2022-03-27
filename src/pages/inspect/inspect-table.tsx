@@ -31,37 +31,41 @@ interface InspectViewProps {
 }
 
 export const InspectTable = ({ states }: InspectViewProps) => {
-  const inChargeRow = <RowColumn direct initiative control />;
-  const startersRow = <RowColumn informative initiative moving />;
-  const sitRow = <RowColumn direct responding moving />;
-  const behindRow = <RowColumn informative responding control />;
+  const inChargeRow = <RowColumn direct initiative control key="inCharge" />;
+  const startersRow = <RowColumn informative initiative moving key="starter" />;
+  const sitRow = <RowColumn direct responding moving key="seeItThrough" />;
+  const behindRow = (
+    <RowColumn informative responding control key="behindScenes" />
+  );
 
   const inChargeRows = inCharge.map((p) => (
-    <PersonalityRow personality={p} states={states} />
+    <PersonalityRow personality={p} states={states} key={p.type} />
   ));
   const starters = starter.map((p) => (
-    <PersonalityRow personality={p} states={states} />
+    <PersonalityRow personality={p} states={states} key={p.type} />
   ));
   const sits = seeItThrough.map((p) => (
-    <PersonalityRow personality={p} states={states} />
+    <PersonalityRow personality={p} states={states} key={p.type} />
   ));
   const behinds = behind.map((p) => (
-    <PersonalityRow personality={p} states={states} />
+    <PersonalityRow personality={p} states={states} key={p.type} />
   ));
 
   return (
     <table>
-      <tr>
-        <HeaderColumn title="Comunication style" />
-        <HeaderColumn title="Guardians" />
-        <HeaderColumn title="Explorers" />
-        <HeaderColumn title="Analytics" />
-        <HeaderColumn title="Diplomats" />
-      </tr>
-      <tr>{[inChargeRow, ...inChargeRows]}</tr>
-      <tr>{[startersRow, ...starters]}</tr>
-      <tr>{[sitRow, ...sits]}</tr>
-      <tr>{[behindRow, ...behinds]}</tr>
+      <tbody>
+        <tr>
+          <HeaderColumn title="Comunication style" />
+          <HeaderColumn title="Guardians" />
+          <HeaderColumn title="Explorers" />
+          <HeaderColumn title="Analytics" />
+          <HeaderColumn title="Diplomats" />
+        </tr>
+        <tr>{[inChargeRow, ...inChargeRows]}</tr>
+        <tr>{[startersRow, ...starters]}</tr>
+        <tr>{[sitRow, ...sits]}</tr>
+        <tr>{[behindRow, ...behinds]}</tr>
+      </tbody>
     </table>
   );
 };

@@ -22,7 +22,7 @@ interface PersonalityDetailViewProps {
 const PersonalityDetailView = ({ states }: PersonalityDetailViewProps) => {
   const { activePersonalities } = states;
   const personalitiesView = activePersonalities.map((p) => (
-    <PersonalityDetail personality={p} states={states} />
+    <PersonalityDetail personality={p} states={states} key={p.type} />
   ));
   return (
     <div
