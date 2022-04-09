@@ -31,12 +31,10 @@ interface InspectViewProps {
 }
 
 export const InspectTable = ({ states }: InspectViewProps) => {
-  const inChargeRow = <RowColumn direct initiative control key="inCharge" />;
-  const startersRow = <RowColumn informative initiative moving key="starter" />;
-  const sitRow = <RowColumn direct responding moving key="seeItThrough" />;
-  const behindRow = (
-    <RowColumn informative responding control key="behindScenes" />
-  );
+  const inChargeRow = <RowColumn direct initiative control key="dic" />;
+  const startersRow = <RowColumn informative initiative moving key="iim" />;
+  const sitRow = <RowColumn direct responding moving key="drm" />;
+  const behindRow = <RowColumn informative responding control key="irc" />;
 
   const inChargeRows = inCharge.map((p) => (
     <PersonalityRow personality={p} states={states} key={p.type} />
