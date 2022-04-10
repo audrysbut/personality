@@ -1,4 +1,4 @@
-import { CSSProperties, useState } from 'react';
+import { useState } from 'react';
 import { CongnitiveFunctionIcon } from '../../components/cognitive-function-icon/cognitive-function-icon';
 import { Personality } from '../../data/cognitive-funcion-data';
 import { CogntiveFunctionPosition } from '../../data/cognitive-function-roles';
