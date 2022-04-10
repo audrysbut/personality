@@ -5,14 +5,11 @@ export const NavigationBar = () => {
   return (
     <div>
       <nav>
-        <ul>
+        {/* <ul>
           <li>
             <Link to="/">Inspect</Link>
           </li>
-          <li>
-            <Link to="/cognitiveFunctions">Cognitive functions</Link>
-          </li>
-        </ul>
+        </ul> */}
       </nav>
     </div>
   );
