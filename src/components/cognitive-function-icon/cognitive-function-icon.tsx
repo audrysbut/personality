@@ -87,6 +87,7 @@ export const CongnitiveFunctionIcon = ({
     <div
       style={{
         color: getColor(),
+        padding: '0.05rem',
       }}
     >
       {element}

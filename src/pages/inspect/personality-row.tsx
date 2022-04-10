@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { CSSProperties, useState } from 'react';
 import { CongnitiveFunctionIcon } from '../../components/cognitive-function-icon/cognitive-function-icon';
 import { Personality } from '../../data/cognitive-funcion-data';
 import { CogntiveFunctionPosition } from '../../data/cognitive-function-roles';
@@ -25,7 +25,7 @@ export const PersonalityRow = ({
       style={{
         border: `${borderWeight}px solid black`,
         textAlign: 'center',
-        background: `radial-gradient(white 40%,${activeColor} 100%)`,
+        background: `${activeColor}`,
         userSelect: 'none',
         fontWeight: active ? 'bold' : 'normal',
         fontSize: '1.4rem',
@@ -35,43 +35,30 @@ export const PersonalityRow = ({
       onMouseOut={() => setActive(false)}
     >
       {personality.type}
-      <table
+
+      <div
         style={{
-          marginLeft: 'auto',
-          marginRight: 'auto',
+          display: 'flex',
+          justifyContent: 'center',
         }}
       >
-        <tbody>
-          <tr>
-            <td>
-              <CongnitiveFunctionIcon
-                cognitiveFunction={hero}
-                position={CogntiveFunctionPosition.hero}
-              />
-            </td>
-            <td>
-              <CongnitiveFunctionIcon
-                cognitiveFunction={parent}
-                position={CogntiveFunctionPosition.parent}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <CongnitiveFunctionIcon
-                cognitiveFunction={child}
-                position={CogntiveFunctionPosition.child}
-              />
-            </td>
-            <td>
-              <CongnitiveFunctionIcon
-                cognitiveFunction={inferior}
-                position={CogntiveFunctionPosition.inferior}
-              />
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        <CongnitiveFunctionIcon
+          cognitiveFunction={hero}
+          position={CogntiveFunctionPosition.hero}
+        />
+        <CongnitiveFunctionIcon
+          cognitiveFunction={parent}
+          position={CogntiveFunctionPosition.parent}
+        />
+        <CongnitiveFunctionIcon
+          cognitiveFunction={child}
+          position={CogntiveFunctionPosition.child}
+        />
+        <CongnitiveFunctionIcon
+          cognitiveFunction={inferior}
+          position={CogntiveFunctionPosition.inferior}
+        />
+      </div>
     </td>
   );
 };
