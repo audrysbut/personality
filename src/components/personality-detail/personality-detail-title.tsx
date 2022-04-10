@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Personality } from '../../data/cognitive-funcion-data';
-import { ActivePersonalityTypeSelector } from '../inspect/active-personality-type-selector';
-import { getPersonalityTypeColor } from './cell';
+import { ActivePersonalityTypeSelector } from '../../pages/inspect/active-personality-type-selector';
+import { getPersonalityTypeColor } from '../../tools/personality-tools';
 
 interface PersonalityDetailTitleProps {
   personality: Personality;

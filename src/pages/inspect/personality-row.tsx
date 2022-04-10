@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { CongnitiveFunctionIcon } from '../../components/cognitive-function-icon/cognitive-function-icon';
 import { Personality } from '../../data/cognitive-funcion-data';
 import { CogntiveFunctionPosition } from '../../data/cognitive-function-roles';
-import { getPersonalityTypeColor } from '../comparison/cell';
+import { getPersonalityTypeColor } from '../../tools/personality-tools';
 import { ActivePersonalityTypeSelector } from './active-personality-type-selector';
 
 interface PersonalityRowProps {

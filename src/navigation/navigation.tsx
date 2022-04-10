@@ -10,9 +10,6 @@ export const NavigationBar = () => {
             <Link to="/">Inspect</Link>
           </li>
           <li>
-            <Link to="/comparison">Comparison</Link>
-          </li>
-          <li>
             <Link to="/cognitiveFunctions">Cognitive functions</Link>
           </li>
         </ul>

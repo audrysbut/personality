@@ -1,4 +1,4 @@
-import { PersonalityDetail } from '../comparison/personality-detail';
+import { PersonalityDetail } from '../../components/personality-detail/personality-detail';
 import {
   ActivePersonalityTypeSelector,
   useActivePersonalityTypes,

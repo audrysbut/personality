@@ -11,7 +11,7 @@ import {
   inferior,
   parent,
 } from '../../data/cognitive-function-roles';
-import { ActivePersonalityTypeSelector } from '../inspect/active-personality-type-selector';
+import { ActivePersonalityTypeSelector } from '../../pages/inspect/active-personality-type-selector';
 import { PersonalityDetailTitle } from './personality-detail-title';
 
 interface PersonalityDetailProps {
