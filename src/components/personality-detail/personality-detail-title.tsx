@@ -25,7 +25,7 @@ export const PersonalityDetailTitle = ({
         userSelect: 'none',
       }}
     >
-      {personality.type}
+      {`${personality.type} (${personality.rarity}%)`}
 
       <span
         style={{

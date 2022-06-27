@@ -47,6 +47,7 @@ export interface Personality {
   critic: CognitiveFunctionType;
   trickster: CognitiveFunctionType;
   demon: CognitiveFunctionType;
+  rarity: number;
 }
 
 export const intj: Personality = {
@@ -59,6 +60,7 @@ export const intj: Personality = {
   critic: Ti,
   trickster: Fe,
   demon: Si,
+  rarity: 2.1,
 };
 
 export const entj: Personality = {
@@ -71,6 +73,7 @@ export const entj: Personality = {
   critic: Ne,
   trickster: Si,
   demon: Fe,
+  rarity: 1.8,
 };
 
 export const estj: Personality = {
@@ -83,6 +86,7 @@ export const estj: Personality = {
   critic: Se,
   trickster: Ni,
   demon: Fe,
+  rarity: 8.7,
 };
 
 export const enfj: Personality = {
@@ -95,6 +99,7 @@ export const enfj: Personality = {
   critic: Ne,
   trickster: Si,
   demon: Te,
+  rarity: 2.5,
 };
 
 export const esfj: Personality = {
@@ -107,6 +112,7 @@ export const esfj: Personality = {
   critic: Se,
   trickster: Ni,
   demon: Te,
+  rarity: 12.3,
 };
 
 export const enfp: Personality = {
@@ -119,6 +125,7 @@ export const enfp: Personality = {
   critic: Fe,
   trickster: Ti,
   demon: Se,
+  rarity: 8.1,
 };
 
 export const entp: Personality = {
@@ -131,6 +138,7 @@ export const entp: Personality = {
   critic: Te,
   trickster: Fi,
   demon: Se,
+  rarity: 3.2,
 };
 
 export const esfp: Personality = {
@@ -143,6 +151,7 @@ export const esfp: Personality = {
   critic: Fe,
   trickster: Ti,
   demon: Ne,
+  rarity: 8.5,
 };
 
 export const estp: Personality = {
@@ -155,6 +164,7 @@ export const estp: Personality = {
   critic: Te,
   trickster: Fi,
   demon: Ne,
+  rarity: 4.3,
 };
 
 export const infj: Personality = {
@@ -167,6 +177,7 @@ export const infj: Personality = {
   critic: Fi,
   trickster: Te,
   demon: Si,
+  rarity: 1.5,
 };
 
 export const istj: Personality = {
@@ -179,6 +190,7 @@ export const istj: Personality = {
   critic: Ti,
   trickster: Fe,
   demon: Ni,
+  rarity: 11.6,
 };
 
 export const isfj: Personality = {
@@ -191,6 +203,7 @@ export const isfj: Personality = {
   critic: Fi,
   trickster: Te,
   demon: Ni,
+  rarity: 13.8,
 };
 
 export const intp: Personality = {
@@ -203,6 +216,7 @@ export const intp: Personality = {
   critic: Ni,
   trickster: Se,
   demon: Fi,
+  rarity: 3.3,
 };
 
 export const istp: Personality = {
@@ -215,6 +229,7 @@ export const istp: Personality = {
   critic: Si,
   trickster: Ne,
   demon: Fi,
+  rarity: 5.4,
 };
 
 export const infp: Personality = {
@@ -227,6 +242,7 @@ export const infp: Personality = {
   critic: Ni,
   trickster: Se,
   demon: Ti,
+  rarity: 4.4,
 };
 
 export const isfp: Personality = {
@@ -239,4 +255,5 @@ export const isfp: Personality = {
   critic: Si,
   trickster: Ne,
   demon: Ti,
+  rarity: 8.8,
 };
