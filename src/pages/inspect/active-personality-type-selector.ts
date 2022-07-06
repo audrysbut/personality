@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Personality } from '../../data/cognitive-funcion-data';
+import { Personality } from '../../data/personality';
 
 export interface ActivePersonalityTypeSelector {
   activePersonalities: Personality[];

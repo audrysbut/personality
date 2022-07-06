@@ -1,0 +1,17 @@
+export type PersonalityType =
+  | 'INFJ'
+  | 'INTJ'
+  | 'ENTJ'
+  | 'ESTJ'
+  | 'ENFJ'
+  | 'ESFJ'
+  | 'ENFP'
+  | 'ENTP'
+  | 'ESFP'
+  | 'ESTP'
+  | 'ISTJ'
+  | 'ISFJ'
+  | 'INTP'
+  | 'ISTP'
+  | 'INFP'
+  | 'ISFP';

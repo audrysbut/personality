@@ -1,9 +1,5 @@
 import { CongnitiveFunctionIcon } from '../../components/cognitive-function-icon/cognitive-function-icon';
 import {
-  CognitiveFunctionType,
-  Personality,
-} from '../../data/cognitive-funcion-data';
-import {
   child,
   CogntiveFunctionPosition,
   getCognitiveFunctionData,
@@ -11,6 +7,8 @@ import {
   inferior,
   parent,
 } from '../../data/cognitive-function-roles';
+import { CognitiveFunctionType } from '../../data/cognitive-function-type';
+import { Personality } from '../../data/personality';
 import { ActivePersonalityTypeSelector } from '../../pages/inspect/active-personality-type-selector';
 import { PersonalityDetailTitle } from './personality-detail-title';
 

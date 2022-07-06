@@ -1,54 +1,7 @@
-export enum CognitiveFunctionType {
-  Ni = 'Ni',
-  Ne = 'Ne',
-  Ti = 'Ti',
-  Te = 'Te',
-  Si = 'Si',
-  Se = 'Se',
-  Fi = 'Fi',
-  Fe = 'Fe',
-}
+import { Fe, Fi, Ne, Ni, Se, Si, Te, Ti } from './cognitive-function-type';
+import { Personality } from './personality';
 
-export const Ni = CognitiveFunctionType.Ni;
-export const Si = CognitiveFunctionType.Si;
-export const Ti = CognitiveFunctionType.Ti;
-export const Fi = CognitiveFunctionType.Fi;
 
-export const Ne = CognitiveFunctionType.Ne;
-export const Se = CognitiveFunctionType.Se;
-export const Te = CognitiveFunctionType.Te;
-export const Fe = CognitiveFunctionType.Fe;
-
-export type PersonalityType =
-  | 'INFJ'
-  | 'INTJ'
-  | 'ENTJ'
-  | 'ESTJ'
-  | 'ENFJ'
-  | 'ESFJ'
-  | 'ENFP'
-  | 'ENTP'
-  | 'ESFP'
-  | 'ESTP'
-  | 'ISTJ'
-  | 'ISFJ'
-  | 'INTP'
-  | 'ISTP'
-  | 'INFP'
-  | 'ISFP';
-
-export interface Personality {
-  type: PersonalityType;
-  hero: CognitiveFunctionType;
-  parent: CognitiveFunctionType;
-  child: CognitiveFunctionType;
-  inferior: CognitiveFunctionType;
-  nemesis: CognitiveFunctionType;
-  critic: CognitiveFunctionType;
-  trickster: CognitiveFunctionType;
-  demon: CognitiveFunctionType;
-  rarity: number;
-}
 
 export const intj: Personality = {
   type: 'INTJ',

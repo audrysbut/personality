@@ -1,4 +1,4 @@
-import { Personality } from '../data/cognitive-funcion-data';
+import { Personality } from "../data/personality";
 
 export function getPersonalityTypeColor(
   personality: Personality,

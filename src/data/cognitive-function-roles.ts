@@ -8,7 +8,7 @@ import {
   Si,
   Te,
   Ti,
-} from './cognitive-funcion-data';
+} from './cognitive-function-type';
 
 export enum CogntiveFunctionPosition {
   hero = 'hero',

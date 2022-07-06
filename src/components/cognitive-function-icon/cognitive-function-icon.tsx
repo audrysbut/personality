@@ -1,14 +1,3 @@
-import {
-  CognitiveFunctionType,
-  Fe,
-  Fi,
-  Ne,
-  Ni,
-  Se,
-  Si,
-  Te,
-  Ti,
-} from '../../data/cognitive-funcion-data';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import LanOutlinedIcon from '@mui/icons-material/LanOutlined';
 import SkateboardingOutlinedIcon from '@mui/icons-material/SkateboardingOutlined';
@@ -18,6 +7,7 @@ import BalanceOutlinedIcon from '@mui/icons-material/BalanceOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import GroupsIcon from '@mui/icons-material/Groups';
 import { CogntiveFunctionPosition } from '../../data/cognitive-function-roles';
+import { CognitiveFunctionType, Fe, Fi, Ne, Ni, Se, Si, Te, Ti } from '../../data/cognitive-function-type';
 
 interface CognitiveFunctionIconProps {
   cognitiveFunction: CognitiveFunctionType;

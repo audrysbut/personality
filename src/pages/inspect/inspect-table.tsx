@@ -15,7 +15,7 @@ import {
   isfp,
   istj,
   istp,
-} from '../../data/cognitive-funcion-data';
+} from '../../data/cognitive-function-data';
 import { ActivePersonalityTypeSelector } from './active-personality-type-selector';
 import { HeaderColumn } from './header-column';
 import { PersonalityRow } from './personality-row';
