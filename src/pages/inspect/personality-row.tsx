@@ -44,6 +44,7 @@ export const PersonalityRow = ({
       <div
         style={{
           fontWeight,
+          paddingBottom: '0.5rem',
         }}
       >
         {personality.name}
