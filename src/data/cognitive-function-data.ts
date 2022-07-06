@@ -1,10 +1,9 @@
 import { Fe, Fi, Ne, Ni, Se, Si, Te, Ti } from './cognitive-function-type';
 import { Personality } from './personality';
 
-
-
 export const intj: Personality = {
   type: 'INTJ',
+  name: 'Architect',
   hero: Ni,
   parent: Te,
   child: Fi,
@@ -18,6 +17,7 @@ export const intj: Personality = {
 
 export const entj: Personality = {
   type: 'ENTJ',
+  name: 'Commander',
   hero: Te,
   parent: Ni,
   child: Se,
@@ -31,6 +31,7 @@ export const entj: Personality = {
 
 export const estj: Personality = {
   type: 'ESTJ',
+  name: 'Executive',
   hero: Te,
   parent: Si,
   child: Ne,
@@ -44,6 +45,7 @@ export const estj: Personality = {
 
 export const enfj: Personality = {
   type: 'ENFJ',
+  name: 'Protagonist',
   hero: Fe,
   parent: Ni,
   child: Se,
@@ -57,6 +59,7 @@ export const enfj: Personality = {
 
 export const esfj: Personality = {
   type: 'ESFJ',
+  name: 'Consul',
   hero: Fe,
   parent: Si,
   child: Ne,
@@ -70,6 +73,7 @@ export const esfj: Personality = {
 
 export const enfp: Personality = {
   type: 'ENFP',
+  name: 'Campaigner',
   hero: Ne,
   parent: Fi,
   child: Te,
@@ -83,6 +87,7 @@ export const enfp: Personality = {
 
 export const entp: Personality = {
   type: 'ENTP',
+  name: 'Debater',
   hero: Ne,
   parent: Ti,
   child: Fe,
@@ -97,6 +102,7 @@ export const entp: Personality = {
 export const esfp: Personality = {
   type: 'ESFP',
   hero: Se,
+  name: 'Entertainer',
   parent: Fi,
   child: Te,
   nemesis: Si,
@@ -109,6 +115,7 @@ export const esfp: Personality = {
 
 export const estp: Personality = {
   type: 'ESTP',
+  name: 'Entrepreneur',
   hero: Se,
   parent: Ti,
   child: Fe,
@@ -122,6 +129,7 @@ export const estp: Personality = {
 
 export const infj: Personality = {
   type: 'INFJ',
+  name: 'Advocate',
   hero: Ni,
   parent: Fe,
   child: Ti,
@@ -135,6 +143,7 @@ export const infj: Personality = {
 
 export const istj: Personality = {
   type: 'ISTJ',
+  name: 'Logistician',
   hero: Si,
   parent: Te,
   child: Fi,
@@ -148,6 +157,7 @@ export const istj: Personality = {
 
 export const isfj: Personality = {
   type: 'ISFJ',
+  name: 'Defender',
   hero: Si,
   parent: Fe,
   child: Ti,
@@ -161,6 +171,7 @@ export const isfj: Personality = {
 
 export const intp: Personality = {
   type: 'INTP',
+  name: 'Logician',
   hero: Ti,
   parent: Ne,
   child: Si,
@@ -174,6 +185,7 @@ export const intp: Personality = {
 
 export const istp: Personality = {
   type: 'ISTP',
+  name: 'Virtuoso',
   hero: Ti,
   parent: Se,
   child: Ni,
@@ -187,6 +199,7 @@ export const istp: Personality = {
 
 export const infp: Personality = {
   type: 'INFP',
+  name: 'Mediator',
   hero: Fi,
   parent: Ne,
   child: Si,
@@ -200,6 +213,7 @@ export const infp: Personality = {
 
 export const isfp: Personality = {
   type: 'ISFP',
+  name: 'Adventurer',
   hero: Fi,
   parent: Se,
   child: Ni,

@@ -3,6 +3,7 @@ import { PersonalityType } from './personality-type';
 
 export interface Personality {
   type: PersonalityType;
+  name: string
   hero: CognitiveFunctionType;
   parent: CognitiveFunctionType;
   child: CognitiveFunctionType;

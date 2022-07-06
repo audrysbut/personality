@@ -20,6 +20,7 @@ export const PersonalityRow = ({
   const [active, setActive] = useState(false);
   const borderWeight = active || isActive ? 2 : 1;
   const { hero, parent, child, inferior } = personality;
+  const fontWeight = active ? 'bold' : 'normal';
   return (
     <td
       style={{
@@ -27,14 +28,26 @@ export const PersonalityRow = ({
         textAlign: 'center',
         background: `${activeColor}`,
         userSelect: 'none',
-        fontWeight: active ? 'bold' : 'normal',
-        fontSize: '1.4rem',
       }}
       onClick={() => toggle(personality)}
       onMouseOver={() => setActive(true)}
       onMouseOut={() => setActive(false)}
     >
-      {personality.type}
+      <span
+        style={{
+          fontWeight,
+          fontSize: '1.4rem',
+        }}
+      >
+        {personality.type}
+      </span>
+      <div
+        style={{
+          fontWeight,
+        }}
+      >
+        {personality.name}
+      </div>
 
       <div
         style={{
