@@ -1,15 +1,13 @@
-import { CongnitiveFunctionIcon } from '../../components/cognitive-function-icon/cognitive-function-icon';
+import { useState } from 'react';
+import { CognitiveFunctionIcon } from '../../components/cognitive-function-icon/cognitive-function-icon';
 import {
-  child,
-  CogntiveFunctionPosition,
+  CognitiveFunctionPosition,
   getCognitiveFunctionData,
-  hero,
-  inferior,
-  parent,
 } from '../../data/cognitive-function-roles';
 import { CognitiveFunctionType } from '../../data/cognitive-function-type';
 import { Personality } from '../../data/personality';
 import { ActivePersonalityTypeSelector } from '../../pages/inspect/active-personality-type-selector';
+import { isMainStackPosition } from '../../tools/personality-tools';
 import { PersonalityDetailTitle } from './personality-detail-title';
 
 interface PersonalityDetailProps {
@@ -42,58 +40,66 @@ export const PersonalityDetail = ({
 const CognitiveFunctionDescriptions = ({
   personality,
 }: CognitiveFunctionDescriptionsProps) => {
-  const { hero, parent, child, inferior, nemesis, critic, trickster, demon } =
-    personality;
+  const {
+    hero,
+    parent,
+    child,
+    inferior,
+    nemesis,
+    critic,
+    trickster,
+    demon,
+    type,
+  } = personality;
 
-  const { type } = personality;
   return (
     <>
       <SingleCognitiveFunction
         key={type + hero}
         cognitiveFunction={hero}
-        position={CogntiveFunctionPosition.hero}
+        position={CognitiveFunctionPosition.hero}
       />
       <SingleCognitiveFunction
         key={type + parent}
         cognitiveFunction={parent}
-        position={CogntiveFunctionPosition.parent}
+        position={CognitiveFunctionPosition.parent}
       />
       <SingleCognitiveFunction
         key={type + child}
         cognitiveFunction={child}
-        position={CogntiveFunctionPosition.child}
+        position={CognitiveFunctionPosition.child}
       />
       <SingleCognitiveFunction
         key={type + inferior}
         cognitiveFunction={inferior}
-        position={CogntiveFunctionPosition.inferior}
+        position={CognitiveFunctionPosition.inferior}
       />
       <SingleCognitiveFunction
         key={type + nemesis}
         cognitiveFunction={nemesis}
-        position={CogntiveFunctionPosition.nemesis}
+        position={CognitiveFunctionPosition.nemesis}
       />
       <SingleCognitiveFunction
         key={type + critic}
         cognitiveFunction={critic}
-        position={CogntiveFunctionPosition.critic}
+        position={CognitiveFunctionPosition.critic}
       />
       <SingleCognitiveFunction
         key={type + trickster}
         cognitiveFunction={trickster}
-        position={CogntiveFunctionPosition.trickster}
+        position={CognitiveFunctionPosition.trickster}
       />
       <SingleCognitiveFunction
         key={type + demon}
         cognitiveFunction={demon}
-        position={CogntiveFunctionPosition.demon}
+        position={CognitiveFunctionPosition.demon}
       />
     </>
   );
 };
 
 interface SingleCognitiveFunctionProps {
-  position: CogntiveFunctionPosition;
+  position: CognitiveFunctionPosition;
   cognitiveFunction: CognitiveFunctionType;
 }
 
@@ -106,6 +112,9 @@ const SingleCognitiveFunction = ({
   cognitiveFunction,
   position,
 }: SingleCognitiveFunctionProps) => {
+  const isMainStack = isMainStackPosition(position);
+  const color = isMainStack ? mainStackColor : shadowStackColor;
+  const [viewTraits, setViewTraits] = useState(isMainStack);
   const data = getCognitiveFunctionData(cognitiveFunction);
   if (!data) {
     return (
@@ -118,40 +127,9 @@ const SingleCognitiveFunction = ({
       </div>
     );
   }
-  const traitsView = data.traits.map((t) => <div>{`* ${t}`}</div>);
-  const visibleText = () => {
-    return (
-      <>
-        <span
-          style={{
-            marginLeft: '0.3rem',
-            fontWeight: 'bold',
-          }}
-        >
-          {data.value}
-        </span>
-        <span
-          style={{
-            marginLeft: '0.2rem',
-            fontWeight: 'normal',
-          }}
-        >
-          {`(${cognitiveFunction})`}
-        </span>
-        <span
-          style={{
-            fontWeight: 'normal',
-            marginLeft: '0.1rem',
-          }}
-        >
-          {`[${position}]`}
-        </span>
-      </>
-    );
-  };
+  const traitsView =
+    viewTraits && data.traits.map((t) => <div>{`* ${t}`}</div>);
 
-  const isMainStack = [hero, parent, child, inferior].includes(position);
-  const color = isMainStack ? mainStackColor : shadowStackColor;
   return (
     <>
       <div
@@ -161,6 +139,7 @@ const SingleCognitiveFunction = ({
           fontWeight: 'bold',
           background: color,
         }}
+        onClick={() => setViewTraits((prev) => !prev)}
       >
         <div
           style={{
@@ -172,11 +151,15 @@ const SingleCognitiveFunction = ({
             userSelect: 'none',
           }}
         >
-          <CongnitiveFunctionIcon
+          <CognitiveFunctionIcon
             cognitiveFunction={cognitiveFunction}
             position={position}
           />
-          {visibleText()}
+          <CognitiveFunctionTitle
+            value={data.value}
+            cognitiveFunction={cognitiveFunction}
+            position={position}
+          />
         </div>
       </div>
       <div
@@ -194,3 +177,44 @@ const SingleCognitiveFunction = ({
 interface CognitiveFunctionDescriptionsProps {
   personality: Personality;
 }
+
+interface CognitiveFunctionTitleProps {
+  value: string;
+  cognitiveFunction: CognitiveFunctionType;
+  position: CognitiveFunctionPosition;
+}
+
+export const CognitiveFunctionTitle = ({
+  cognitiveFunction,
+  position,
+  value,
+}: CognitiveFunctionTitleProps) => {
+  return (
+    <>
+      <span
+        style={{
+          marginLeft: '0.3rem',
+          fontWeight: 'bold',
+        }}
+      >
+        {value}
+      </span>
+      <span
+        style={{
+          marginLeft: '0.2rem',
+          fontWeight: 'normal',
+        }}
+      >
+        {`(${cognitiveFunction})`}
+      </span>
+      <span
+        style={{
+          fontWeight: 'normal',
+          marginLeft: '0.1rem',
+        }}
+      >
+        {`[${position}]`}
+      </span>
+    </>
+  );
+};

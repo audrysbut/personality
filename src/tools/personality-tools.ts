@@ -1,4 +1,11 @@
-import { Personality } from "../data/personality";
+import {
+  child,
+  CognitiveFunctionPosition,
+  hero,
+  inferior,
+  parent,
+} from '../data/cognitive-function-roles';
+import { Personality } from '../data/personality';
 
 export function getPersonalityTypeColor(
   personality: Personality,
@@ -32,4 +39,11 @@ export function getPersonalityTypeColor(
   }
 
   return 'white';
+}
+
+const mainStack = [hero, parent, child, inferior];
+export function isMainStackPosition(
+  position: CognitiveFunctionPosition
+): boolean {
+  return mainStack.includes(position);
 }

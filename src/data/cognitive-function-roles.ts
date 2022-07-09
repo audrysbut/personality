@@ -10,7 +10,7 @@ import {
   Ti,
 } from './cognitive-function-type';
 
-export enum CogntiveFunctionPosition {
+export enum CognitiveFunctionPosition {
   hero = 'hero',
   parent = 'parent',
   child = 'child',
@@ -21,14 +21,14 @@ export enum CogntiveFunctionPosition {
   demon = 'demon',
 }
 
-export const hero = CogntiveFunctionPosition.hero;
-export const parent = CogntiveFunctionPosition.parent;
-export const child = CogntiveFunctionPosition.child;
-export const inferior = CogntiveFunctionPosition.inferior;
-export const nemesis = CogntiveFunctionPosition.nemesis;
-export const trickster = CogntiveFunctionPosition.trickster;
-export const critic = CogntiveFunctionPosition.critic;
-export const demon = CogntiveFunctionPosition.demon;
+export const hero = CognitiveFunctionPosition.hero;
+export const parent = CognitiveFunctionPosition.parent;
+export const child = CognitiveFunctionPosition.child;
+export const inferior = CognitiveFunctionPosition.inferior;
+export const nemesis = CognitiveFunctionPosition.nemesis;
+export const trickster = CognitiveFunctionPosition.trickster;
+export const critic = CognitiveFunctionPosition.critic;
+export const demon = CognitiveFunctionPosition.demon;
 
 interface CognitiveFunctionData {
   cognitiveFunctionType: CognitiveFunctionType;

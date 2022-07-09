@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { CongnitiveFunctionIcon } from '../../components/cognitive-function-icon/cognitive-function-icon';
-import { CogntiveFunctionPosition } from '../../data/cognitive-function-roles';
+import { CognitiveFunctionIcon } from '../../components/cognitive-function-icon/cognitive-function-icon';
+import { CognitiveFunctionPosition } from '../../data/cognitive-function-roles';
 import { Personality } from '../../data/personality';
 import { getPersonalityTypeColor } from '../../tools/personality-tools';
 import { ActivePersonalityTypeSelector } from './active-personality-type-selector';
@@ -56,21 +56,21 @@ export const PersonalityRow = ({
           justifyContent: 'center',
         }}
       >
-        <CongnitiveFunctionIcon
+        <CognitiveFunctionIcon
           cognitiveFunction={hero}
-          position={CogntiveFunctionPosition.hero}
+          position={CognitiveFunctionPosition.hero}
         />
-        <CongnitiveFunctionIcon
+        <CognitiveFunctionIcon
           cognitiveFunction={parent}
-          position={CogntiveFunctionPosition.parent}
+          position={CognitiveFunctionPosition.parent}
         />
-        <CongnitiveFunctionIcon
+        <CognitiveFunctionIcon
           cognitiveFunction={child}
-          position={CogntiveFunctionPosition.child}
+          position={CognitiveFunctionPosition.child}
         />
-        <CongnitiveFunctionIcon
+        <CognitiveFunctionIcon
           cognitiveFunction={inferior}
-          position={CogntiveFunctionPosition.inferior}
+          position={CognitiveFunctionPosition.inferior}
         />
       </div>
     </td>

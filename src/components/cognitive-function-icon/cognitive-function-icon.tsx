@@ -6,15 +6,25 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import BalanceOutlinedIcon from '@mui/icons-material/BalanceOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import GroupsIcon from '@mui/icons-material/Groups';
-import { CogntiveFunctionPosition } from '../../data/cognitive-function-roles';
-import { CognitiveFunctionType, Fe, Fi, Ne, Ni, Se, Si, Te, Ti } from '../../data/cognitive-function-type';
+import { CognitiveFunctionPosition } from '../../data/cognitive-function-roles';
+import {
+  CognitiveFunctionType,
+  Fe,
+  Fi,
+  Ne,
+  Ni,
+  Se,
+  Si,
+  Te,
+  Ti,
+} from '../../data/cognitive-function-type';
 
 interface CognitiveFunctionIconProps {
   cognitiveFunction: CognitiveFunctionType;
-  position: CogntiveFunctionPosition;
+  position: CognitiveFunctionPosition;
 }
 
-export const CongnitiveFunctionIcon = ({
+export const CognitiveFunctionIcon = ({
   cognitiveFunction,
   position,
 }: CognitiveFunctionIconProps) => {
