@@ -45,37 +45,46 @@ const CognitiveFunctionDescriptions = ({
   const { hero, parent, child, inferior, nemesis, critic, trickster, demon } =
     personality;
 
+  const { type } = personality;
   return (
     <>
       <SingleCognitiveFunction
+        key={type + hero}
         cognitiveFunction={hero}
         position={CogntiveFunctionPosition.hero}
       />
       <SingleCognitiveFunction
+        key={type + parent}
         cognitiveFunction={parent}
         position={CogntiveFunctionPosition.parent}
       />
       <SingleCognitiveFunction
+        key={type + child}
         cognitiveFunction={child}
         position={CogntiveFunctionPosition.child}
       />
       <SingleCognitiveFunction
+        key={type + inferior}
         cognitiveFunction={inferior}
         position={CogntiveFunctionPosition.inferior}
       />
       <SingleCognitiveFunction
+        key={type + nemesis}
         cognitiveFunction={nemesis}
         position={CogntiveFunctionPosition.nemesis}
       />
       <SingleCognitiveFunction
+        key={type + critic}
         cognitiveFunction={critic}
         position={CogntiveFunctionPosition.critic}
       />
       <SingleCognitiveFunction
+        key={type + trickster}
         cognitiveFunction={trickster}
         position={CogntiveFunctionPosition.trickster}
       />
       <SingleCognitiveFunction
+        key={type + demon}
         cognitiveFunction={demon}
         position={CogntiveFunctionPosition.demon}
       />
