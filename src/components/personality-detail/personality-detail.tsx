@@ -164,6 +164,7 @@ const SingleCognitiveFunction = ({
       </div>
       <div
         style={{
+          paddingBottom: '0.06rem',
           textAlign: 'left',
           paddingLeft: '0.2rem',
         }}
