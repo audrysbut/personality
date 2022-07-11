@@ -81,6 +81,7 @@ export const SingleCognitiveFunction = ({
             margin: '0 auto',
             width: '90%',
             userSelect: 'none',
+            height: '2rem',
           }}
         >
           <CognitiveFunctionIcon
@@ -96,7 +97,7 @@ export const SingleCognitiveFunction = ({
       </div>
       <div
         style={{
-          paddingBottom: '0.06rem',
+          paddingBottom: '0.15rem',
           textAlign: 'left',
           paddingLeft: '0.2rem',
         }}
