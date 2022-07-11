@@ -1,5 +1,8 @@
 import { useState } from 'react';
-import { CognitiveFunctionPosition, getCognitiveFunctionData } from '../../data/cognitive-function-roles';
+import {
+  CognitiveFunctionPosition,
+  getCognitiveFunctionData,
+} from '../../data/cognitive-function-roles';
 import { CognitiveFunctionType } from '../../data/cognitive-function-type';
 import { isMainStackPosition } from '../../tools/personality-tools';
 import { CognitiveFunctionIcon } from '../cognitive-function-icon/cognitive-function-icon';
@@ -10,19 +13,39 @@ interface SingleCognitiveFunctionProps {
   cognitiveFunction: CognitiveFunctionType;
 }
 
-const mainStackColor =
+const mainStackColorActive =
+  'linear-gradient(to right, white, rgba(0,255,0,0.8), white)';
+
+const mainStackColorInactive =
   'linear-gradient(to right, white, rgba(0,255,0,0.3), white)';
-const shadowStackColor =
+
+function getMainStackColor(hovered: boolean) {
+  return hovered ? mainStackColorActive : mainStackColorInactive;
+}
+
+const shadowStackColorActive =
+  'linear-gradient(to right, white, rgba(0,0,0,0.5), white)';
+
+const shadowStackColorInActive =
   'linear-gradient(to right, white, rgba(0,0,0,0.3), white)';
+
+function getShadowStackColor(hovered: boolean) {
+  return hovered ? shadowStackColorActive : shadowStackColorInActive;
+}
 
 export const SingleCognitiveFunction = ({
   cognitiveFunction,
   position,
 }: SingleCognitiveFunctionProps) => {
   const isMainStack = isMainStackPosition(position);
-  const color = isMainStack ? mainStackColor : shadowStackColor;
   const [viewTraits, setViewTraits] = useState(isMainStack);
+  const [hover, setHover] = useState(false);
   const data = getCognitiveFunctionData(cognitiveFunction);
+
+  const color = isMainStack
+    ? getMainStackColor(hover)
+    : getShadowStackColor(hover);
+
   if (!data) {
     return (
       <div
@@ -47,6 +70,8 @@ export const SingleCognitiveFunction = ({
           background: color,
         }}
         onClick={() => setViewTraits((prev) => !prev)}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
       >
         <div
           style={{
