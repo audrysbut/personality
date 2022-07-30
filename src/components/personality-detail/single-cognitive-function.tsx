@@ -103,31 +103,33 @@ export const SingleCognitiveFunction = ({
       </div>
       <div
         style={{
-          paddingBottom: "0.15rem",
           textAlign: "left",
           paddingLeft: "0.2rem",
+          paddingBottom: "0.05rem",
         }}
       >
         {viewTraits && (
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-            }}
-          >
-            <div style={{ width: "170px" }}>{traitsView()}</div>
-            <div
-              style={{
-                paddingLeft: "1rem",
-                paddingRight: "1rem",
-                overflowWrap: "break-word",
-                width: "320px",
-              }}
-            >
-              {monologue()}
-            </div>
-          </div>
+          <table>
+            <tbody>
+              <tr>
+                <td
+                  style={{
+                    width: "170px",
+                    borderRight: "1px solid black",
+                  }}
+                >
+                  {traitsView()}
+                </td>
+                <td
+                  style={{
+                    width: "320px",
+                  }}
+                >
+                  {monologue()}
+                </td>
+              </tr>
+            </tbody>
+          </table>
         )}
       </div>
     </>
