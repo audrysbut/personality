@@ -1,12 +1,12 @@
-import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
-import LanOutlinedIcon from '@mui/icons-material/LanOutlined';
-import SkateboardingOutlinedIcon from '@mui/icons-material/SkateboardingOutlined';
-import TipsAndUpdatesOutlinedIcon from '@mui/icons-material/TipsAndUpdatesOutlined';
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-import BalanceOutlinedIcon from '@mui/icons-material/BalanceOutlined';
-import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
-import GroupsIcon from '@mui/icons-material/Groups';
-import { CognitiveFunctionPosition } from '../../data/cognitive-function-roles';
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import LanOutlinedIcon from "@mui/icons-material/LanOutlined";
+import SkateboardingOutlinedIcon from "@mui/icons-material/SkateboardingOutlined";
+import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import BalanceOutlinedIcon from "@mui/icons-material/BalanceOutlined";
+import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
+import GroupsIcon from "@mui/icons-material/Groups";
+import { CognitiveFunctionPosition } from "../../data/cognitive-function-data";
 import {
   CognitiveFunctionType,
   Fe,
@@ -17,7 +17,7 @@ import {
   Si,
   Te,
   Ti,
-} from '../../data/cognitive-function-type';
+} from "../../data/cognitive-function-type";
 
 interface CognitiveFunctionIconProps {
   cognitiveFunction: CognitiveFunctionType;
@@ -50,7 +50,7 @@ export const CognitiveFunctionIcon = ({
         return (
           <span
             style={{
-              color: 'red',
+              color: "red",
             }}
           >
             No icon
@@ -63,23 +63,23 @@ export const CognitiveFunctionIcon = ({
   const getColor = (): string => {
     switch (cognitiveFunction) {
       case Fi:
-        return 'red';
+        return "red";
       case Te:
-        return '#F6358A';
+        return "#F6358A";
       case Ne:
-        return 'orange';
+        return "orange";
       case Ni:
-        return 'magenta';
+        return "magenta";
       case Fe:
-        return 'purple';
+        return "purple";
       case Si:
-        return 'lime';
+        return "lime";
       case Se:
-        return 'green';
+        return "green";
       case Ti:
-        return 'charcoal';
+        return "charcoal";
       default:
-        return 'blue';
+        return "blue";
     }
   };
 
@@ -87,7 +87,7 @@ export const CognitiveFunctionIcon = ({
     <div
       style={{
         color: getColor(),
-        padding: '0.05rem',
+        padding: "0.05rem",
       }}
     >
       {element}

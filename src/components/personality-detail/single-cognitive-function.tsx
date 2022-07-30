@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import { useState } from "react";
 import {
   CognitiveFunctionPosition,
   getCognitiveFunctionData,
-} from '../../data/cognitive-function-roles';
-import { CognitiveFunctionType } from '../../data/cognitive-function-type';
-import { isMainStackPosition } from '../../tools/personality-tools';
-import { CognitiveFunctionIcon } from '../cognitive-function-icon/cognitive-function-icon';
-import { CognitiveFunctionTitle } from './cognitive-function-title';
+} from "../../data/cognitive-function-data";
+import { CognitiveFunctionType } from "../../data/cognitive-function-type";
+import { getMonologueData } from "../../data/monologue-data";
+import { isMainStackPosition } from "../../tools/personality-tools";
+import { CognitiveFunctionIcon } from "../cognitive-function-icon/cognitive-function-icon";
+import { CognitiveFunctionTitle } from "./cognitive-function-title";
 
 interface SingleCognitiveFunctionProps {
   position: CognitiveFunctionPosition;
@@ -14,20 +15,20 @@ interface SingleCognitiveFunctionProps {
 }
 
 const mainStackColorActive =
-  'linear-gradient(to right, white, rgba(0,255,0,0.8), white)';
+  "linear-gradient(to right, white, rgba(0,255,0,0.8), white)";
 
 const mainStackColorInactive =
-  'linear-gradient(to right, white, rgba(0,255,0,0.3), white)';
+  "linear-gradient(to right, white, rgba(0,255,0,0.3), white)";
 
 function getMainStackColor(hovered: boolean) {
   return hovered ? mainStackColorActive : mainStackColorInactive;
 }
 
 const shadowStackColorActive =
-  'linear-gradient(to right, white, rgba(0,0,0,0.5), white)';
+  "linear-gradient(to right, white, rgba(0,0,0,0.5), white)";
 
 const shadowStackColorInActive =
-  'linear-gradient(to right, white, rgba(0,0,0,0.3), white)';
+  "linear-gradient(to right, white, rgba(0,0,0,0.3), white)";
 
 function getShadowStackColor(hovered: boolean) {
   return hovered ? shadowStackColorActive : shadowStackColorInActive;
@@ -50,23 +51,28 @@ export const SingleCognitiveFunction = ({
     return (
       <div
         style={{
-          color: 'red',
+          color: "red",
         }}
       >
         No Data Available
       </div>
     );
   }
-  const traitsView =
-    viewTraits && data.traits.map((t) => <div>{`* ${t}`}</div>);
-
+  const traitsView = () => data.traits.map((t) => <div>{`* ${t}`}</div>);
+  const monologue = () => {
+    const monologue = getMonologueData(cognitiveFunction, position);
+    if (monologue) {
+      return <div>{monologue.monologue}</div>;
+    }
+    return undefined;
+  };
   return (
     <>
       <div
         style={{
-          borderBottom: '1px solid black',
-          borderTop: '1px solid black',
-          fontWeight: 'bold',
+          borderBottom: "1px solid black",
+          borderTop: "1px solid black",
+          fontWeight: "bold",
           background: color,
         }}
         onClick={() => setViewTraits((prev) => !prev)}
@@ -75,13 +81,13 @@ export const SingleCognitiveFunction = ({
       >
         <div
           style={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-            margin: '0 auto',
-            width: '90%',
-            userSelect: 'none',
-            height: '2rem',
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            margin: "0 auto",
+            width: "90%",
+            userSelect: "none",
+            height: "2rem",
           }}
         >
           <CognitiveFunctionIcon
@@ -97,12 +103,32 @@ export const SingleCognitiveFunction = ({
       </div>
       <div
         style={{
-          paddingBottom: '0.15rem',
-          textAlign: 'left',
-          paddingLeft: '0.2rem',
+          paddingBottom: "0.15rem",
+          textAlign: "left",
+          paddingLeft: "0.2rem",
         }}
       >
-        {traitsView}
+        {viewTraits && (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <div style={{ width: "170px" }}>{traitsView()}</div>
+            <div
+              style={{
+                paddingLeft: "1rem",
+                paddingRight: "1rem",
+                overflowWrap: "break-word",
+                width: "320px",
+              }}
+            >
+              {monologue()}
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

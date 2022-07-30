@@ -15,11 +15,11 @@ import {
   isfp,
   istj,
   istp,
-} from '../../data/cognitive-function-data';
-import { ActivePersonalityTypeSelector } from './active-personality-type-selector';
-import { HeaderColumn } from './header-column';
-import { PersonalityRow } from './personality-row';
-import { RowColumn } from './row-column';
+} from "../../data/personality-data";
+import { ActivePersonalityTypeSelector } from "./active-personality-type-selector";
+import { HeaderColumn } from "./header-column";
+import { PersonalityRow } from "./personality-row";
+import { RowColumn } from "./row-column";
 
 const inCharge = [estj, estp, entj, enfj];
 const starter = [esfj, esfp, entp, enfp];

@@ -1,4 +1,4 @@
-import { CognitiveFunctionPosition } from "../../data/cognitive-function-roles";
+import { CognitiveFunctionPosition } from "../../data/cognitive-function-data";
 import { Personality } from "../../data/personality";
 import { SingleCognitiveFunction } from "./single-cognitive-function";
 
