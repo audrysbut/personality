@@ -115,18 +115,20 @@ export const SingleCognitiveFunction = ({
                 <td
                   style={{
                     width: "170px",
-                    borderRight: "1px solid black",
                   }}
                 >
                   {traitsView()}
                 </td>
-                <td
-                  style={{
-                    width: "320px",
-                  }}
-                >
-                  {monologue()}
-                </td>
+                {isMainStack && (
+                  <td
+                    style={{
+                      width: "320px",
+                      borderLeft: "1px solid black",
+                    }}
+                  >
+                    {monologue()}
+                  </td>
+                )}
               </tr>
             </tbody>
           </table>
