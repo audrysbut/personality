@@ -124,6 +124,7 @@ export const SingleCognitiveFunction = ({
                     style={{
                       width: "320px",
                       borderLeft: "1px solid black",
+                      paddingLeft: "0.2rem",
                     }}
                   >
                     {monologue()}
