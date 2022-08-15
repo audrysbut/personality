@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Personality } from "../../data/personality";
 import { ActivePersonalityTypeSelector } from "../../pages/inspect/active-personality-type-selector";
 import { getPersonalityTypeColor } from "../../tools/personality-tools";
+import DehazeIcon from "@mui/icons-material/Dehaze";
+import CloseIcon from "@mui/icons-material/Close";
 
 interface PersonalityDetailTitleProps {
   personality: Personality;
@@ -12,8 +14,10 @@ export const PersonalityDetailTitle = ({
   personality,
   states,
 }: PersonalityDetailTitleProps) => {
-  const [active, setActive] = useState(false);
-  const opacity = active ? 0.3 : 0.2;
+  const [activeCloseButton, setActiveCloseButton] = useState(false);
+  const [activeNavigateButton, setActiveNavigateButton] = useState(false);
+  const closeButtonOpacity = activeCloseButton ? 0.3 : 0.1;
+  const navigateButtonOpacity = activeNavigateButton ? 0.3 : 0.1;
   const { deactivatePersonality } = states;
   return (
     <div
@@ -31,17 +35,35 @@ export const PersonalityDetailTitle = ({
       <span
         style={{
           right: "0rem",
-          top: 0,
-          padding: "0.0rem 0.4rem 0rem 0.4rem",
-          position: "absolute",
-          background: `rgba(0,0,0,${opacity})`,
-          userSelect: "none",
         }}
-        onMouseOver={() => setActive(true)}
-        onMouseLeave={() => setActive(false)}
-        onClick={() => deactivatePersonality(personality)}
+      ></span>
+      <span
+        style={{
+          right: 0,
+          bottom: 0,
+          top: 0,
+          position: "absolute",
+        }}
       >
-        x
+        <DehazeIcon
+          style={{
+            height: "100%",
+            background: `rgba(0,0,0,${navigateButtonOpacity})`,
+            borderRight: "1px solid black",
+            borderLeft: "1px solid black",
+          }}
+          onMouseOver={() => setActiveNavigateButton(true)}
+          onMouseLeave={() => setActiveNavigateButton(false)}
+        />
+        <CloseIcon
+          style={{
+            background: `rgba(0,0,0,${closeButtonOpacity})`,
+            height: "100%",
+          }}
+          onMouseOver={() => setActiveCloseButton(true)}
+          onMouseLeave={() => setActiveCloseButton(false)}
+          onClick={() => deactivatePersonality(personality)}
+        />
       </span>
     </div>
   );

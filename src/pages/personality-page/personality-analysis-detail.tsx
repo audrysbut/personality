@@ -13,7 +13,7 @@ import {
 import { CognitiveFunctionType } from "../../data/cognitive-function-type";
 import { Personality } from "../../data/personality";
 import { CognitiveFunctionHeader } from "../../components/personality-detail/cognitive-function-header";
-import { getAnalysisInfo } from "./personality-analysis-data";
+import { getAnalysisInfo } from "./data/personality-analysis-data";
 
 interface PersonalityAnalysisDetailProps {
   personality: Personality;
@@ -43,8 +43,9 @@ export const PersonalityAnalysisDetail = ({
       <div>
         <div
           style={{
-            borderTop: "1px solid black",
-            borderBottom: "1px solid black",
+            borderTop: "2px solid black",
+            borderBottom: "2px solid black",
+            background: "linear-gradient(to right, white, lightblue, white)",
           }}
         >
           <CognitiveFunctionHeader
@@ -57,13 +58,12 @@ export const PersonalityAnalysisDetail = ({
           <div
             style={{
               textAlign: "justify",
-              marginLeft: "0.5rem",
             }}
           >
             {functionData.values.map((r) => (
               <div
                 style={{
-                  marginBottom: "0.5rem",
+                  padding: "0.25rem",
                 }}
               >{`* ${r}`}</div>
             ))}

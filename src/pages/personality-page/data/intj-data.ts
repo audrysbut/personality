@@ -1,5 +1,4 @@
 import {
-  CognitiveFunctionType,
   Fe,
   Fi,
   Ne,
@@ -8,16 +7,10 @@ import {
   Si,
   Te,
   Ti,
-} from "../../data/cognitive-function-type";
-import { PersonalityType } from "../../data/personality-type";
+} from "../../../data/cognitive-function-type";
+import { PersonalityAnalysisInfo } from "./personality-analysis-data";
 
-interface PersonalityAnalysisInfo {
-  type: PersonalityType;
-  cognitiveFunction: CognitiveFunctionType;
-  values: string[];
-}
-
-const intj: PersonalityAnalysisInfo[] = [
+export const intjData: PersonalityAnalysisInfo[] = [
   {
     type: "INTJ",
     cognitiveFunction: Ni,
@@ -90,13 +83,3 @@ const intj: PersonalityAnalysisInfo[] = [
     ],
   },
 ];
-const data: PersonalityAnalysisInfo[] = [...intj];
-
-export function getAnalysisInfo(
-  type: PersonalityType,
-  cognitiveFunction: CognitiveFunctionType
-): PersonalityAnalysisInfo | undefined {
-  return data.find(
-    (r) => r.cognitiveFunction === cognitiveFunction && r.type === type
-  );
-}

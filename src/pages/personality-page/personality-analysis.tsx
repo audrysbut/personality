@@ -31,7 +31,7 @@ interface PersonalityDetailTitleProps {
 
 //TODO: move out this to another page
 const PersonalityDetailTitle = ({
-  personality
+  personality,
 }: PersonalityDetailTitleProps) => {
   return (
     <div
