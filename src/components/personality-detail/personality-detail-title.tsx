@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { Personality } from '../../data/personality';
-import { ActivePersonalityTypeSelector } from '../../pages/inspect/active-personality-type-selector';
-import { getPersonalityTypeColor } from '../../tools/personality-tools';
+import { useState } from "react";
+import { Personality } from "../../data/personality";
+import { ActivePersonalityTypeSelector } from "../../pages/inspect/active-personality-type-selector";
+import { getPersonalityTypeColor } from "../../tools/personality-tools";
 
 interface PersonalityDetailTitleProps {
   personality: Personality;
@@ -19,23 +19,23 @@ export const PersonalityDetailTitle = ({
     <div
       style={{
         background: getPersonalityTypeColor(personality, true),
-        lineHeight: '1.8rem',
-        alignItems: 'center',
-        fontWeight: 'bold',
-        position: 'relative',
-        userSelect: 'none',
+        lineHeight: "1.8rem",
+        alignItems: "center",
+        fontWeight: "bold",
+        position: "relative",
+        userSelect: "none",
       }}
     >
-      {`${personality.type} (${personality.rarity}%)`}
+      {`${personality.name} (${personality.type}) [${personality.rarity}%]`}
 
       <span
         style={{
-          right: '0rem',
+          right: "0rem",
           top: 0,
-          padding: '0.0rem 0.4rem 0rem 0.4rem',
-          position: 'absolute',
+          padding: "0.0rem 0.4rem 0rem 0.4rem",
+          position: "absolute",
           background: `rgba(0,0,0,${opacity})`,
-          userSelect: 'none',
+          userSelect: "none",
         }}
         onMouseOver={() => setActive(true)}
         onMouseLeave={() => setActive(false)}

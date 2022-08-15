@@ -30,7 +30,7 @@ export const trickster = CognitiveFunctionPosition.trickster;
 export const critic = CognitiveFunctionPosition.critic;
 export const demon = CognitiveFunctionPosition.demon;
 
-interface CognitiveFunctionData {
+export interface CognitiveFunctionData {
   cognitiveFunctionType: CognitiveFunctionType;
   traits: string[];
   value: string;
@@ -81,12 +81,6 @@ const data: CognitiveFunctionData[] = [
 
 export function getCognitiveFunctionData(
   cognitiveFunction: CognitiveFunctionType
-): CognitiveFunctionData | undefined {
-  const records = data.filter(
-    (t) => t.cognitiveFunctionType === cognitiveFunction
-  );
-  if (records.length > 0) {
-    return records[0];
-  }
-  return undefined;
+): CognitiveFunctionData {
+  return data.find((t) => t.cognitiveFunctionType === cognitiveFunction)!;
 }

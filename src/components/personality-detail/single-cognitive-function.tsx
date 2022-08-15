@@ -6,8 +6,7 @@ import {
 import { CognitiveFunctionType } from "../../data/cognitive-function-type";
 import { getMonologueData } from "../../data/monologue-data";
 import { isMainStackPosition } from "../../tools/personality-tools";
-import { CognitiveFunctionIcon } from "../cognitive-function-icon/cognitive-function-icon";
-import { CognitiveFunctionTitle } from "./cognitive-function-title";
+import { CognitiveFunctionHeader } from "./cognitive-function-header";
 
 interface SingleCognitiveFunctionProps {
   position: CognitiveFunctionPosition;
@@ -47,17 +46,6 @@ export const SingleCognitiveFunction = ({
     ? getMainStackColor(hover)
     : getShadowStackColor(hover);
 
-  if (!data) {
-    return (
-      <div
-        style={{
-          color: "red",
-        }}
-      >
-        No Data Available
-      </div>
-    );
-  }
   const traitsView = () => data.traits.map((t) => <div>{`* ${t}`}</div>);
   const monologue = () => {
     const monologue = getMonologueData(cognitiveFunction, position);
@@ -79,27 +67,11 @@ export const SingleCognitiveFunction = ({
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            margin: "0 auto",
-            width: "90%",
-            userSelect: "none",
-            height: "2rem",
-          }}
-        >
-          <CognitiveFunctionIcon
-            cognitiveFunction={cognitiveFunction}
-            position={position}
-          />
-          <CognitiveFunctionTitle
-            value={data.value}
-            cognitiveFunction={cognitiveFunction}
-            position={position}
-          />
-        </div>
+        <CognitiveFunctionHeader
+          cognitiveFunction={cognitiveFunction}
+          position={position}
+          data={data}
+        />
       </div>
       <div
         style={{

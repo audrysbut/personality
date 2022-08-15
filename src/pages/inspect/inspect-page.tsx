@@ -1,9 +1,9 @@
-import { PersonalityDetail } from '../../components/personality-detail/personality-detail';
+import { PersonalityDetail } from "../../components/personality-detail/personality-detail";
 import {
   ActivePersonalityTypeSelector,
   useActivePersonalityTypes,
-} from './active-personality-type-selector';
-import { InspectTable } from './inspect-table';
+} from "./active-personality-type-selector";
+import { InspectTable } from "./inspect-table";
 
 export const InspectPage = () => {
   const states = useActivePersonalityTypes();
@@ -24,13 +24,5 @@ const PersonalityDetailView = ({ states }: PersonalityDetailViewProps) => {
   const personalitiesView = activePersonalities.map((p) => (
     <PersonalityDetail personality={p} states={states} key={p.type} />
   ));
-  return (
-    <div
-      style={{
-        display: 'flex',
-      }}
-    >
-      {personalitiesView}
-    </div>
-  );
+  return <div style={{ display: "flex" }}>{personalitiesView}</div>;
 };
