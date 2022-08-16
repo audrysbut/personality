@@ -40,12 +40,13 @@ export const PersonalityAnalysisDetail = ({
     const data = getCognitiveFunctionData(r.function);
     const functionData = getAnalysisInfo(personality.type, r.function);
     return (
-      <div>
+      <>
         <div
           style={{
-            borderTop: "2px solid black",
-            borderBottom: "2px solid black",
+            borderTop: "1px solid black",
+            borderBottom: "1px solid black",
             background: "linear-gradient(to right, white, lightblue, white)",
+            marginTop: "2px",
           }}
         >
           <CognitiveFunctionHeader
@@ -69,7 +70,7 @@ export const PersonalityAnalysisDetail = ({
             ))}
           </div>
         ) : undefined}
-      </div>
+      </>
     );
   });
   return <>{elements}</>;
