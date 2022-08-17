@@ -1,5 +1,6 @@
 import { CognitiveFunctionType } from "../../../data/cognitive-function-type";
 import { PersonalityType } from "../../../data/personality-type";
+import { infpData } from "./infp-data";
 import { intjData } from "./intj-data";
 
 export interface PersonalityAnalysisInfo {
@@ -8,7 +9,7 @@ export interface PersonalityAnalysisInfo {
   values: string[];
 }
 
-const data: PersonalityAnalysisInfo[] = [...intjData];
+const data: PersonalityAnalysisInfo[] = [...intjData, ...infpData];
 
 export function getAnalysisInfo(
   type: PersonalityType,
