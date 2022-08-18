@@ -15,9 +15,7 @@ export const intjData: PersonalityAnalysisInfo[] = [
     type: "INTJ",
     cognitiveFunction: Ni,
     values: [
-      "INTJs use introverted intuition to look at patterns, meanings, and possibilities. Rather than simply looking at concrete facts, they are more interested in what these facts mean.",
       "People with an INTJ personality type enjoy thinking about the future and exploring possibilities.",
-      "When remembering events, an INTJ may recall impressions more than exact details of what occurred.",
       `INTJs are good at "reading between the lines" to figure out what things might really mean.`,
       "INTJs are fascinated by patterns, and their introverted intuition gives them the ability to explore possibilities and connections that many other people can’t see. INTJs don’t only take facts as concrete objects; they like to explore the meaning of these facts and analyze things from all angles. INTJs spend a lot of time considering their plans and looking at potential goals.",
       "They also have powerful chronological memories and know how to recall things beyond just the facts. Most INTJs are talented when it comes to locating combinations, connections, and patterns, so they are excellent at assessing what is going on in life, especially when another is being deceptive or manipulative.",
