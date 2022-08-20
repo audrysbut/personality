@@ -1,5 +1,5 @@
-import { CognitiveFunctionType } from "../../../data/cognitive-function-type";
-import { PersonalityType } from "../../../data/personality-type";
+import { CognitiveFunctionType } from "../cognitive-function-type";
+import { PersonalityType } from "../personality-type";
 import { data as infp } from "./infp-data";
 import { data as intj } from "./intj-data";
 import { data as intp} from "./intp-data";

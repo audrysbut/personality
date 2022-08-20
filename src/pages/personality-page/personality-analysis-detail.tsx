@@ -13,7 +13,7 @@ import {
 import { CognitiveFunctionType } from "../../data/cognitive-function-type";
 import { Personality } from "../../data/personality";
 import { CognitiveFunctionHeader } from "../../components/personality-detail/cognitive-function-header";
-import { getAnalysisInfo } from "./data/personality-analysis-data";
+import { getAnalysisInfo } from "../../data/personality-analysis/personality-analysis-data";
 
 interface PersonalityAnalysisDetailProps {
   personality: Personality;

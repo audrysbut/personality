@@ -1,14 +1,5 @@
-import {
-  Fe,
-  Fi,
-  Ne,
-  Ni,
-  Se,
-  Si,
-  Te,
-  Ti,
-} from "../../../data/cognitive-function-type";
-import { PersonalityType } from "../../../data/personality-type";
+import { Fe, Fi, Ne, Ni, Se, Si, Te, Ti } from "../cognitive-function-type";
+import { PersonalityType } from "../personality-type";
 import { PersonalityAnalysisInfo } from "./personality-analysis-data";
 
 const type: PersonalityType = "INTP";
