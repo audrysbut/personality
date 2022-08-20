@@ -8,11 +8,13 @@ import {
   Te,
   Ti,
 } from "../../../data/cognitive-function-type";
+import { PersonalityType } from "../../../data/personality-type";
 import { PersonalityAnalysisInfo } from "./personality-analysis-data";
 
-export const intjData: PersonalityAnalysisInfo[] = [
+const type: PersonalityType = "INTJ";
+export const data: PersonalityAnalysisInfo[] = [
   {
-    type: "INTJ",
+    type,
     cognitiveFunction: Ni,
     values: [
       "People with an INTJ personality type enjoy thinking about the future and exploring possibilities.",
@@ -22,7 +24,7 @@ export const intjData: PersonalityAnalysisInfo[] = [
     ],
   },
   {
-    type: "INTJ",
+    type,
     cognitiveFunction: Te,
     values: [
       "The secondary function of the INTJ personality is extraverted thinking. INTJ’s extraverted thinking allows them to find order and structure in our chaotic world. INTJs tend to use their extraverted thinking when trying to solve problems, and you’ll see this when you watch how exact they can be. Since INTJs have this extraverted thinking skill, they enjoy formulating their decisions using logic. INTJs are excellent at organizing what they see around them into patterns and cause-and-effect relationships.",
@@ -32,7 +34,7 @@ export const intjData: PersonalityAnalysisInfo[] = [
     ],
   },
   {
-    type: "INTJ",
+    type,
     cognitiveFunction: Fi,
     values: [
       "The INTJs tertiary cognitive function is introverted feeling. So, while INTJs do use this function, it’s tertiary, so they don’t use it as often as their dominant and auxiliary functions. So, INTJs do have signs of introversion, but they won’t be as introverted as some of the other introverted personalities.",
@@ -43,7 +45,7 @@ export const intjData: PersonalityAnalysisInfo[] = [
     ],
   },
   {
-    type: "INTJ",
+    type,
     cognitiveFunction: Se,
     values: [
       "The inferior function for all INTJs, and the least developed cognitive function, is extraverted sensing. While INTJs don’t always use this function, they can take information through their senses quite effectively when they need to. INTJs tend not to rely on this all the time, but they do know how to tune into their worlds.",
@@ -52,28 +54,28 @@ export const intjData: PersonalityAnalysisInfo[] = [
     ],
   },
   {
-    type: "INTJ",
+    type,
     cognitiveFunction: Ne,
     values: [
       "Extraverted intuition, or Ne, is the polar opposite of the INTJ’s dominant cognitive function, introverted intuition, or Ni. When an INTJ utilizes Ni, he or she looks for meaning and patterns to tell what will happen in the future. When doing that, INTJs have a singular focus. Ne, on the other hand, often interrupts the INTJ’s Ni analysis, which can irritate the INTJ greatly. An INTJ that is unhealthy can shut down others when others try to demonstrate alternate possibilities to the INTJ.",
     ],
   },
   {
-    type: "INTJ",
+    type,
     cognitiveFunction: Ti,
     values: [
       "Introverted thinking, or Ti, is the opposite of the INTJs auxiliary cognitive function of extraverted thinking, or Te. INTJs use Te to protect themselves and others, and also to accomplish the tasks they need to perform throughout the day. With Te, the INTJ is using order to plan an action. Ti, on the other hand, can be infuriating for an INTJ. Ti, to an INTJ, often comes across as a loud inner voice that’s criticizing them, and that can cause them to shut down and become unproductive when they are unhealthy.",
     ],
   },
   {
-    type: "INTJ",
+    type,
     cognitiveFunction: Fe,
     values: [
       "The opposite of the INTJ cognitive tertiary function is extraverted thinking. For an INTJ, extraverted thinking can create a lack of organization in the INTJ thought process. When an INTJ is unhealthy, he or she often stop taking responsibility for his or her actions. That’s because the INTJ is dissociating from the organization, and not aware of everything around him or her anymore.",
     ],
   },
   {
-    type: "INTJ",
+    type,
     cognitiveFunction: Si,
     values: [
       "Introverted sensing is the polar opposite of the INTJ’s inferior cognitive function. When an INTJ is unhealthy, introverted sensing can act as an internal form of sabotage for the INTJ. INTJs are very good at remembering what’s happened in the past, what’s happening now, and how things all link together. They also try to live healthily when they are healthy. However, when INTJs are unhealthy, they can start ignoring what’s happened in the past, and then lose track of their ability to combine patterns and understand the future.",
