@@ -4,11 +4,14 @@ import { ActivePersonalityTypeSelector } from "../../pages/inspect/active-person
 import { getPersonalityTypeColor } from "../../tools/personality-tools";
 import DehazeIcon from "@mui/icons-material/Dehaze";
 import CloseIcon from "@mui/icons-material/Close";
-import { useNavigate } from "react-router-dom";
 
 interface PersonalityDetailTitleProps {
   personality: Personality;
   states: ActivePersonalityTypeSelector;
+}
+
+function navigateTo(url: string) {
+  window.open(url, "_blank", "noopener,noreferrer");
 }
 
 export const PersonalityDetailTitle = ({
@@ -17,9 +20,9 @@ export const PersonalityDetailTitle = ({
 }: PersonalityDetailTitleProps) => {
   const [activeCloseButton, setActiveCloseButton] = useState(false);
   const [activeNavigateButton, setActiveNavigateButton] = useState(false);
+
   const closeButtonOpacity = activeCloseButton ? 0.3 : 0.1;
   const navigateButtonOpacity = activeNavigateButton ? 0.3 : 0.1;
-  const navigate = useNavigate();
   const { deactivatePersonality } = states;
   return (
     <div
@@ -56,7 +59,7 @@ export const PersonalityDetailTitle = ({
           }}
           onMouseOver={() => setActiveNavigateButton(true)}
           onMouseLeave={() => setActiveNavigateButton(false)}
-          onClick={() => navigate(`/personality/${personality.type}`)}
+          onClick={() => navigateTo(personality.moreInfoUrl)}
         />
         <CloseIcon
           style={{

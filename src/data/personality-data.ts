@@ -59,7 +59,8 @@ function makePersonality(
   name: string,
   hero: CognitiveFunctionType,
   parent: CognitiveFunctionType,
-  rarity: number
+  rarity: number,
+  moreInfoUrl: string
 ): Personality {
   const child = opositeF(parent);
   const inferior = opositeF(hero);
@@ -79,32 +80,157 @@ function makePersonality(
     critic,
     trickster,
     demon,
+    moreInfoUrl,
   };
 }
 
-export const entj = makePersonality("ENTJ", "Commander", Te, Ni, 1.8);
-export const intj = makePersonality("INTJ", "Architect", Ni, Te, 2.1);
-export const estj = makePersonality("ESTJ", "Executive", Te, Si, 8.7);
-export const enfj = makePersonality("ENFJ", "Protagonist", Fe, Ni, 2.5);
+export const entj = makePersonality(
+  "ENTJ",
+  "Commander",
+  Te,
+  Ni,
+  1.8,
+  "https://charakteris.info/entj-tipas"
+);
+export const intj = makePersonality(
+  "INTJ",
+  "Architect",
+  Ni,
+  Te,
+  2.1,
+  "https://charakteris.info/intj-tipas"
+);
+export const estj = makePersonality(
+  "ESTJ",
+  "Executive",
+  Te,
+  Si,
+  8.7,
+  "https://charakteris.info/estj-tipas"
+);
+export const enfj = makePersonality(
+  "ENFJ",
+  "Protagonist",
+  Fe,
+  Ni,
+  2.5,
+  "https://charakteris.info/enfj-tipas"
+);
 
-export const esfj = makePersonality("ESFJ", "Consul", Fe, Si, 12.3);
-export const enfp = makePersonality("ENFP", "Campaigner", Ne, Fi, 8.1);
-export const entp = makePersonality("ENTP", "Debater", Ne, Ti, 3.2);
-export const esfp = makePersonality("ESFP", "Entertainer", Se, Fi, 8.5);
+export const esfj = makePersonality(
+  "ESFJ",
+  "Consul",
+  Fe,
+  Si,
+  12.3,
+  "https://charakteris.info/esfj-tipas"
+);
+export const enfp = makePersonality(
+  "ENFP",
+  "Campaigner",
+  Ne,
+  Fi,
+  8.1,
+  "https://charakteris.info/enfp-tipas"
+);
+export const entp = makePersonality(
+  "ENTP",
+  "Debater",
+  Ne,
+  Ti,
+  3.2,
+  "https://charakteris.info/entp-tipas"
+);
+export const esfp = makePersonality(
+  "ESFP",
+  "Entertainer",
+  Se,
+  Fi,
+  8.5,
+  "https://charakteris.info/esfp-tipas"
+);
 
-export const estp = makePersonality("ESTP", "Entrepreneur", Se, Ti, 4.3);
-export const infj = makePersonality("INFJ", "Advocate", Ni, Fe, 1.5);
-export const istj = makePersonality("ISTJ", "Logistician", Si, Te, 11.6);
-export const isfj = makePersonality("ISFJ", "Defender", Si, Fe, 13.8);
+export const estp = makePersonality(
+  "ESTP",
+  "Entrepreneur",
+  Se,
+  Ti,
+  4.3,
+  "https://charakteris.info/estp-tipas"
+);
+export const infj = makePersonality(
+  "INFJ",
+  "Advocate",
+  Ni,
+  Fe,
+  1.5,
+  "https://charakteris.info/infj-tipas"
+);
+export const istj = makePersonality(
+  "ISTJ",
+  "Logistician",
+  Si,
+  Te,
+  11.6,
+  "https://charakteris.info/istj-tipas"
+);
+export const isfj = makePersonality(
+  "ISFJ",
+  "Defender",
+  Si,
+  Fe,
+  13.8,
+  "https://charakteris.info/isfj-tipas"
+);
 
-export const intp = makePersonality("INTP", "Logician", Ti, Ne, 3.3);
-export const istp = makePersonality("ISTP", "Virtuoso", Ti, Se, 5.4);
-export const infp = makePersonality("INFP", "Mediator", Fi, Ne, 4.4);
-export const isfp = makePersonality("ISFP", "Adventurer", Fi, Se, 8.8);
+export const intp = makePersonality(
+  "INTP",
+  "Logician",
+  Ti,
+  Ne,
+  3.3,
+  "https://charakteris.info/intp-tipas"
+);
+export const istp = makePersonality(
+  "ISTP",
+  "Virtuoso",
+  Ti,
+  Se,
+  5.4,
+  "https://charakteris.info/istp-tipas"
+);
+export const infp = makePersonality(
+  "INFP",
+  "Mediator",
+  Fi,
+  Ne,
+  4.4,
+  "https://charakteris.info/infp-tipas"
+);
+export const isfp = makePersonality(
+  "ISFP",
+  "Adventurer",
+  Fi,
+  Se,
+  8.8,
+  "https://charakteris.info/isfp-tipas"
+);
 
 export const personalities = [
-  entj, intj, estj, enfj,
-  esfj, enfp, entp, esfp,
-  estp, infj, istj, isfj,
-  intp, istp, infp, isfp
-]
+  entj,
+  intj,
+  estj,
+  enfj,
+  esfj,
+  enfp,
+  entp,
+  esfp,
+  estp,
+  infj,
+  istj,
+  isfj,
+  intp,
+  istp,
+  infp,
+  isfp,
+];

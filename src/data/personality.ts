@@ -1,9 +1,9 @@
-import { CognitiveFunctionType } from './cognitive-function-type';
-import { PersonalityType } from './personality-type';
+import { CognitiveFunctionType } from "./cognitive-function-type";
+import { PersonalityType } from "./personality-type";
 
 export interface Personality {
   type: PersonalityType;
-  name: string
+  name: string;
   hero: CognitiveFunctionType;
   parent: CognitiveFunctionType;
   child: CognitiveFunctionType;
@@ -13,4 +13,5 @@ export interface Personality {
   trickster: CognitiveFunctionType;
   demon: CognitiveFunctionType;
   rarity: number;
+  moreInfoUrl: string;
 }
