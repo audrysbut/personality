@@ -91,7 +91,7 @@ export const SingleCognitiveFunction = ({
                 >
                   {traitsView()}
                 </td>
-                {isMainStack && (
+                {(
                   <td
                     style={{
                       width: "320px",

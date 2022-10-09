@@ -1,5 +1,5 @@
 import { MonologueData } from "./monologue-data";
-import { child, hero, inferior, parent } from "../cognitive-function-data";
+import { child, hero, inferior, nemesis, parent } from "../cognitive-function-data";
 import { Si } from "../cognitive-function-type";
 
 export const siMonologueData: MonologueData[] = [
@@ -26,5 +26,9 @@ export const siMonologueData: MonologueData[] = [
         position: inferior,
         monologue:
             "(non-mature version) Out with the old, in with the new! F*ck the system! The man can’t keep me down!",
-    },
+    },{
+        cognitiveFunction: Si,
+        position: nemesis,
+        monologue: `Si Nemesis is telling the ESxP that, “Your lack of effort makes you undesirable.” ESxPs are worried that they will not have good experiences. It is their undesirability (Ne Demon) that creates their fear of having a bad experience. Developing their capacity for effort, discipline, and taking the consequences of their actions into account will make them more desirable, and ease the fear of having a bad experience.`
+    }
 ]

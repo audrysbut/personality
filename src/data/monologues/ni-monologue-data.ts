@@ -1,5 +1,5 @@
 import { MonologueData } from "./monologue-data";
-import { child, hero, inferior, parent } from "../cognitive-function-data";
+import { child, hero, inferior, nemesis, parent } from "../cognitive-function-data";
 import { Ni } from "../cognitive-function-type";
 
 export const niMonologueData: MonologueData[] = [
@@ -26,5 +26,9 @@ export const niMonologueData: MonologueData[] = [
         position: inferior,
         monologue:
             "Everyone needs to stop over-analyzing everything, the answers are literally right in front of us.",
-    },
+    },{
+        cognitiveFunction: Ni,
+        position: nemesis,
+        monologue: `Ni Nemesis is telling the ENxPs that, “You won’t get what you want until you learn to perform.” Their Se Demons are aware that their freedom of choice will be jeopardized so long as they continually make people uncomfortable and remain unable to perform. Until the ENxP learns to value the importance of the shared present moment, and improving their own performance, their Ni Nemesis will continue to create fear for their future.`
+    }
 ]

@@ -1,5 +1,5 @@
 import { MonologueData } from "./monologue-data";
-import { child, hero, inferior, parent } from "../cognitive-function-data";
+import { child, hero, inferior, nemesis, parent } from "../cognitive-function-data";
 import { Ti } from "../cognitive-function-type";
 
 export const tiMonologueData: MonologueData[] = [
@@ -26,5 +26,9 @@ export const tiMonologueData: MonologueData[] = [
         position: inferior,
         monologue:
             "Can I use these objective observations about others to my advantage?",
-    },
+    },{
+        cognitiveFunction: Ti,
+        position: nemesis,
+        monologue: `Ti Nemesis is telling the ExTJs that, “You are not as smart as you could be because you don’t consider what is good for other people.” Every Ti user learns that their intelligence is linked to how helpful they can be to other people. If ExTJs took the time to consider what is actually good for other people, they will unlock the power of their Fe Demon. When they do this, their Ti Nemesis’ capacity to think clearly and verify their stored information will grow exponentially.`
+    }
 ]
