@@ -4,19 +4,45 @@ import { ActivePersonalityTypeSelector } from "../../pages/inspect/active-person
 import { getPersonalityTypeColor } from "../../tools/personality-tools";
 import DehazeIcon from "@mui/icons-material/Dehaze";
 import CloseIcon from "@mui/icons-material/Close";
+import ToggleOffOutlinedIcon from "@mui/icons-material/ToggleOffOutlined";
+import ToggleOnOutlined from "@mui/icons-material/ToggleOnOutlined";
+import { Trait } from "../../data/traits.ts/trait";
 
 interface PersonalityDetailTitleProps {
   personality: Personality;
   states: ActivePersonalityTypeSelector;
+  traitState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
+  traits: Trait[] | undefined;
 }
 
 function navigateTo(url: string) {
   window.open(url, "_blank", "noopener,noreferrer");
 }
 
+interface SwitchProps {
+  traitState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
+}
+const Switch = ({ traitState }: SwitchProps) => {
+  const [state, setState] = traitState;
+  const size = "1.8rem";
+  const item = state ? (
+    <ToggleOnOutlined style={{ width: size, height: size }} />
+  ) : (
+    <ToggleOffOutlinedIcon style={{ width: size, height: size }} />
+  );
+  const changeState = () => setState((prev) => !prev);
+  return (
+    <span style={{ paddingRight: "0.2rem" }} onClick={changeState}>
+      {item}
+    </span>
+  );
+};
+
 export const PersonalityDetailTitle = ({
   personality,
   states,
+  traitState,
+  traits,
 }: PersonalityDetailTitleProps) => {
   const [activeCloseButton, setActiveCloseButton] = useState(false);
   const [activeNavigateButton, setActiveNavigateButton] = useState(false);
@@ -24,6 +50,7 @@ export const PersonalityDetailTitle = ({
   const closeButtonOpacity = activeCloseButton ? 0.3 : 0.1;
   const navigateButtonOpacity = activeNavigateButton ? 0.3 : 0.1;
   const { deactivatePersonality } = states;
+
   return (
     <div
       style={{
@@ -42,14 +69,8 @@ export const PersonalityDetailTitle = ({
           right: "0rem",
         }}
       ></span>
-      <span
-        style={{
-          right: 0,
-          bottom: 0,
-          top: 0,
-          position: "absolute",
-        }}
-      >
+      <span style={{ right: 0, bottom: 0, top: 0, position: "absolute" }}>
+        {traits && traits.length && <Switch traitState={traitState} />}
         <DehazeIcon
           style={{
             height: "100%",
