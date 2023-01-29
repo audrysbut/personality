@@ -75,7 +75,7 @@ export const traits: Trait[] = [
   {
     trait: "Lack of patience",
     description:
-      "Can be impatient with people who do not understand their ideas or ideas.",
+      "Can be impatient with people who do not understand their ideas.",
   },
   {
     trait: "Lack of tact",
