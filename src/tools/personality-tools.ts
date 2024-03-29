@@ -21,24 +21,24 @@ export function getPersonalityTypeColor(
 
   const analytic = intuitive && thinker;
   if (analytic && selected) {
-    return "violet";
+    return "bg-purple-300";
   }
 
   const diplomat = intuitive && feeler;
   if (diplomat && selected) {
-    return "lightgreen";
+    return "bg-green-200";
   }
 
   const sentinel = sensor && judger;
   if (sentinel && selected) {
-    return "lightblue";
+    return "bg-blue-200";
   }
 
   if (perceiver && selected) {
-    return "yellow";
+    return "bg-yellow-200";
   }
 
-  return "white";
+  return "bg-white";
 }
 
 const mainStack = [hero, parent, child, inferior];

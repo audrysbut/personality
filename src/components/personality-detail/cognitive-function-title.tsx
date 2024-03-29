@@ -14,30 +14,9 @@ export const CognitiveFunctionTitle = ({
 }: CognitiveFunctionTitleProps) => {
   return (
     <>
-      <span
-        style={{
-          marginLeft: "0.3rem",
-          fontWeight: "bold",
-        }}
-      >
-        {value}
-      </span>
-      <span
-        style={{
-          marginLeft: "0.2rem",
-          fontWeight: "normal",
-        }}
-      >
-        {`(${cognitiveFunction})`}
-      </span>
-      <span
-        style={{
-          fontWeight: "normal",
-          marginLeft: "0.1rem",
-        }}
-      >
-        {`[${position}]`}
-      </span>
+      <span className="ml-1 font-bold">{value}</span>
+      <span className="ml-1 font-normal">{`(${cognitiveFunction})`}</span>
+      <span className="ml-1 font-normal">{`[${position}]`}</span>
     </>
   );
 };

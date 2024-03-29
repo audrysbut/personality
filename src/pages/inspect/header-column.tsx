@@ -5,11 +5,7 @@ interface HeaderColumnProps {
 export const HeaderColumn = ({ title }: HeaderColumnProps) => {
   return (
     <th
-      style={{
-        border: '2px solid black',
-        width: '7rem',
-        userSelect: 'none',
-      }}
+      className={`border-solid border-2 border-black text-center w-32 select-none`}
     >
       {title}
     </th>

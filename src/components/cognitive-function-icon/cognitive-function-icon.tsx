@@ -18,6 +18,7 @@ import {
   Te,
   Ti,
 } from "../../data/cognitive-function-type";
+import { FC, useState } from "react";
 
 interface CognitiveFunctionIconProps {
   cognitiveFunction: CognitiveFunctionType;
@@ -47,15 +48,7 @@ export const CognitiveFunctionIcon = ({
       case Si:
         return <BalanceOutlinedIcon />;
       default:
-        return (
-          <span
-            style={{
-              color: "red",
-            }}
-          >
-            No icon
-          </span>
-        );
+        return <span className="color-red">No icon</span>;
     }
   };
 
@@ -63,34 +56,63 @@ export const CognitiveFunctionIcon = ({
   const getColor = (): string => {
     switch (cognitiveFunction) {
       case Fi:
-        return "red";
+        return "text-red-500"; // Tailwind's red
       case Te:
-        return "#F6358A";
+        return "text-pink-600"; // Closest to #F6358A
       case Ne:
-        return "orange";
+        return "text-orange-500"; // Tailwind's orange
       case Ni:
-        return "magenta";
+        return "text-fuchsia-500"; // Closest to magenta
       case Fe:
-        return "purple";
+        return "text-purple-700"; // Tailwind's purple
       case Si:
-        return "lime";
+        return "text-lime-500"; // Tailwind doesn't have lime, you might need to customize your colors
       case Se:
-        return "green";
+        return "text-green-500"; // Tailwind's green
       case Ti:
-        return "charcoal";
+        return "text-gray-900"; // Closest to charcoal
       default:
-        return "blue";
+        return "text-blue-500";
     }
   };
-
+  const { show, onEnable, onDisable } = useDelayShow();
   return (
     <div
-      style={{
-        color: getColor(),
-        padding: "0.05rem",
-      }}
+      className={`${getColor()} pr-1 relative`}
+      onMouseEnter={onEnable}
+      onMouseLeave={onDisable}
     >
+      {show && <Tooltip text={cognitiveFunction} />}
       {element}
     </div>
   );
+};
+
+interface TooltipProps {
+  text: string;
+}
+const Tooltip: FC<TooltipProps> = ({ text }) => {
+  return (
+    <div className="absolute top-6 left-6 border-1 border-black bg-black text-white rounded-0.3 rounded-md z-10 px-1">
+      {text}
+    </div>
+  );
+};
+
+const useDelayShow = () => {
+  const [show, setShow] = useState(false);
+  const [nodeTimemout, setNodeTimeout] = useState(0);
+  const onEnable = () => {
+    const timemout = setTimeout(() => {
+      setShow(true);
+    }, 500);
+    setNodeTimeout(timemout);
+  };
+
+  const onDisable = () => {
+    setShow(false);
+    clearTimeout(nodeTimemout);
+  };
+
+  return { show, onEnable, onDisable };
 };

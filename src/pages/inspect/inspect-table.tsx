@@ -50,7 +50,7 @@ export const InspectTable = ({ states }: InspectViewProps) => {
   ));
 
   return (
-    <table>
+    <table className="m-1">
       <tbody>
         <tr>
           <HeaderColumn title="Comunication style" />

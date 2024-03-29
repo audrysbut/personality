@@ -1,4 +1,5 @@
 import { useState } from "react";
+import tw from "tailwindcss";
 import {
   CognitiveFunctionPosition,
   getCognitiveFunctionData,
@@ -57,12 +58,8 @@ export const SingleCognitiveFunction = ({
   return (
     <>
       <div
-        style={{
-          borderBottom: "1px solid black",
-          borderTop: "1px solid black",
-          fontWeight: "bold",
-          background: color,
-        }}
+        className="border-t border-b border-black font-bold"
+        style={{ background: color }}
         onClick={() => setViewTraits((prev) => !prev)}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
@@ -73,35 +70,17 @@ export const SingleCognitiveFunction = ({
           data={data}
         />
       </div>
-      <div
-        style={{
-          textAlign: "left",
-          paddingLeft: "0.2rem",
-          paddingBottom: "0.05rem",
-        }}
-      >
+      <div className="text-left pl-1 pb-1">
         {viewTraits && (
           <table>
             <tbody>
               <tr>
-                <td
-                  style={{
-                    width: "170px",
-                  }}
-                >
-                  {traitsView()}
-                </td>
-                {(
-                  <td
-                    style={{
-                      width: "320px",
-                      borderLeft: "1px solid black",
-                      paddingLeft: "0.2rem",
-                    }}
-                  >
+                <td className="w-40">{traitsView()}</td>
+                {
+                  <td className="w-80 border-l border-black pl-1">
                     {monologue()}
                   </td>
-                )}
+                }
               </tr>
             </tbody>
           </table>

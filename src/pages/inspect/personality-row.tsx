@@ -18,44 +18,19 @@ export const PersonalityRow = ({
   const isActive = states.isActive(personality);
   const activeColor = getPersonalityTypeColor(personality, isActive);
   const [active, setActive] = useState(false);
-  const borderWeight = active || isActive ? 2 : 1;
   const { hero, parent, child, inferior } = personality;
-  const fontWeight = active ? "bold" : "normal";
+  const fontWeight = active ? "font-bold" : "font-normal";
   return (
     <td
-      style={{
-        border: `${borderWeight}px solid black`,
-        textAlign: "center",
-        background: `${activeColor}`,
-        userSelect: "none",
-      }}
+      className={`border-solid border-2 border-black text-center ${activeColor} select-none`}
       onClick={() => toggle(personality)}
       onMouseOver={() => setActive(true)}
       onMouseOut={() => setActive(false)}
     >
-      <span
-        style={{
-          fontWeight,
-          fontSize: "1.4rem",
-        }}
-      >
-        {personality.type}
-      </span>
-      <div
-        style={{
-          fontWeight,
-          paddingBottom: "0.5rem",
-        }}
-      >
-        {personality.name}
-      </div>
+      <span className={`${fontWeight} text-2xl`}>{personality.type}</span>
+      <div className={`${fontWeight} pb-2`}>{personality.name}</div>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
+      <div className="flex justify-center">
         <CognitiveFunctionIcon
           cognitiveFunction={hero}
           position={CognitiveFunctionPosition.hero}

@@ -13,17 +13,7 @@ export const PersonalityDetail = ({
   states,
 }: PersonalityDetailProps) => {
   return (
-    <div
-      style={{
-        minWidth: "15rem",
-        border: "1px solid black",
-        marginRight: "1rem",
-        paddingBottom: "0.5em",
-        textAlign: "center",
-        borderRadius: "0.5rem",
-        overflow: "hidden",
-      }}
-    >
+    <div className="overflow-hidden border border-black rounded-md mr-4">
       <PersonalityDetailTitle personality={personality} states={states} />
       <CognitiveFunctionDescription personality={personality} />
     </div>

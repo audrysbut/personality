@@ -14,6 +14,10 @@ function navigateTo(url: string) {
   window.open(url, "_blank", "noopener,noreferrer");
 }
 
+function useOpacity(active: boolean) {
+  return active ? "bg-opacity-30" : "bg-opacity-10";
+}
+
 export const PersonalityDetailTitle = ({
   personality,
   states,
@@ -21,51 +25,28 @@ export const PersonalityDetailTitle = ({
   const [activeCloseButton, setActiveCloseButton] = useState(false);
   const [activeNavigateButton, setActiveNavigateButton] = useState(false);
 
-  const closeButtonOpacity = activeCloseButton ? 0.3 : 0.1;
-  const navigateButtonOpacity = activeNavigateButton ? 0.3 : 0.1;
+  const closeButtonOpacity = useOpacity(activeCloseButton);
+  const navigateButtonOpacity = useOpacity(activeNavigateButton);
+
   const { deactivatePersonality } = states;
   return (
     <div
-      style={{
-        background: getPersonalityTypeColor(personality, true),
-        lineHeight: "1.8rem",
-        alignItems: "center",
-        fontWeight: "bold",
-        position: "relative",
-        userSelect: "none",
-      }}
+      className={`${getPersonalityTypeColor(
+        personality,
+        true
+      )} text-center border-1 border-black select-none font-bold relative`}
     >
       {`${personality.name} (${personality.type}) [${personality.rarity}%]`}
 
-      <span
-        style={{
-          right: "0rem",
-        }}
-      ></span>
-      <span
-        style={{
-          right: 0,
-          bottom: 0,
-          top: 0,
-          position: "absolute",
-        }}
-      >
+      <span className="absolute right-0 top-0 flex">
         <DehazeIcon
-          style={{
-            height: "100%",
-            background: `rgba(0,0,0,${navigateButtonOpacity})`,
-            borderRight: "1px solid black",
-            borderLeft: "1px solid black",
-          }}
+          className={`border-r border-l border-solid border-black bg-black ${navigateButtonOpacity}`}
           onMouseOver={() => setActiveNavigateButton(true)}
           onMouseLeave={() => setActiveNavigateButton(false)}
           onClick={() => navigateTo(personality.moreInfoUrl)}
         />
         <CloseIcon
-          style={{
-            background: `rgba(0,0,0,${closeButtonOpacity})`,
-            height: "100%",
-          }}
+          className={`bg-black ${closeButtonOpacity}`}
           onMouseOver={() => setActiveCloseButton(true)}
           onMouseLeave={() => setActiveCloseButton(false)}
           onClick={() => deactivatePersonality(personality)}

@@ -24,5 +24,5 @@ const PersonalityDetailView = ({ states }: PersonalityDetailViewProps) => {
   const personalitiesView = activePersonalities.map((p) => (
     <PersonalityDetail personality={p} states={states} key={p.type} />
   ));
-  return <div style={{ display: "flex" }}>{personalitiesView}</div>;
+  return <div className="flex">{personalitiesView}</div>;
 };

@@ -18,16 +18,7 @@ export const CognitiveFunctionHeader = ({
   data,
 }: CognitiveFunctionHeaderProps) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        height: "2rem",
-        width: "100%",
-        userSelect: "none",
-        alignItems: "center",
-        paddingLeft: "0.5rem",
-      }}
-    >
+    <div className="flex h-8 w-full select-none items-center pl-2">
       <CognitiveFunctionIcon
         cognitiveFunction={cognitiveFunction}
         position={position}
